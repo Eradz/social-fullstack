@@ -1,21 +1,14 @@
 import './App.css';
-import { Login } from './components/loginup/Login';
-import { Signup } from './components/Signup';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { Nav } from './components/nav/Nav';
+import { Product } from './components/products/Product';
 
 
 function App() {
  
   return (
     <>
-    <BrowserRouter>
-        <div className="App">
-            <Routes>
-              <Route exact path="/" element={<Login/>}/>
-              <Route exact path='/signup' element={<Signup/>}/>
-            </Routes>
-        </div>
-    </BrowserRouter>
+   <Nav/>
+   <Product/>
     </>
   );
 }
