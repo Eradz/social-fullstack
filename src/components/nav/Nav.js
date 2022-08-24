@@ -7,23 +7,26 @@ export const Nav = () => {
   const menu = [
     {id: 1, name: 'Home', link: '#'},
     {id: 2, name: 'Categories', link: '#', items:[
-      {id: 2, name: 'Mens', link: '#'},
-      {id: 3, name: 'Womens', link: '#'},
+      {id: 2, name: 'Men', link: '#'},
+      {id: 3, name: 'Women', link: '#'},
       {id: 4, name: 'Jeweries', link: '#'},
       {id: 5, name: 'Electronics', link: '#'},
     ]},
-    {id: 3, name: 'Sign up', link: '#'},
-    {id: 4, name: 'Login', link: '#'},
-    {id: 5, name: 'About', link: '#'},
-    {id: 6, name: 'Contact us', link: '#'},
+    {id: 3, name: 'Men', link: '#'},
+    {id: 4, name: 'Women', link: '#'},
+    {id: 5, name: 'Jeweries', link: '#'},
+    {id: 6, name: 'Electronics', link: '#'},
+    {id: 9, name: 'About', link: '#'},
+    {id: 10, name: 'Contact us', link: '#'},
+    {id: 7, name: 'Sign up', link: '#'},
+    {id: 8, name: 'Login', link: '#'},
   ]
+
+  
 
   const [nav, setNav] = useState(false)
   const [show, setShow] = useState(false)
 
-  const showing = () =>{
-    setShow(!show)
-  }
   const toogle = () =>{
     setNav(!nav)
   }
@@ -41,19 +44,18 @@ export const Nav = () => {
         </div>
         <div className='md:flex hidden ml-[-5rem] relative'> 
         {menu.map((link) =>{ 
-          if(link.id !== 3 && link.id !== 4  ){
+          if(link.id !== 7 && link.id !== 8 && link.id !== 3 && link.id !== 4 && link.id !== 5 && link.id !== 6   ){
           return <div className='mr-1' key={link.id}>
             <ul >
-              <li className='pl-4 '><a href={link.link}>{link.name}</a></li>
+              <li onClick={() =>{
+                  if(link.id === 2){
+                    setShow(!show)
+                  }
+              }} className='pl-4 '><a href={link.link}>{link.name}</a></li>
             </ul>
           </div>}
-          menu.find((cate) =>{
-            if(cate.name === 'Categories'){
-              <div onClick={toogle}></div>
-            }
-          })
         })}
-        <div className='absolute top-9 left-[90px]'>
+        <div className={show? 'absolute top-9 left-[90px] duration-700 ease-in-out' : 'top-[-300px] left-[90px] absolute duration-700 ease-in-out'}>
       {menu[1].items.map((categories) => {
         return <div className='hidden md:block '>{categories.name}</div>
       })}
@@ -78,12 +80,13 @@ export const Nav = () => {
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
         {menu.map((link) =>{
+            if((link.id !== 2)){
           return <div className='pt-3' key={link.id}>
             <ul className='text-center p-3'>
               <li><a href={link.link}>{link.name}</a></li>
                 <div className=' bg-gray-500 w-full h-1'/>
             </ul>
-          </div>
+          </div>}
         })}
     </div>
     </div>
