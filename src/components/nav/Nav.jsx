@@ -43,18 +43,22 @@ export const Nav = () => {
         {menu.map((link) =>{ 
           if(link.id !== 7 && link.id !== 8 && link.id !== 3 && link.id !== 4 && link.id !== 5 && link.id !== 6   ){
           return <div className='mr-1' key={link.id}>
-            <ul>
+            <ul className='flex mt-3'>
               <li onClick={() =>{
                   if(link.id === 2){
                     setShow(!show)
+                    return <div> hey </div>
                   }
-              }} className='pl-4 '><a href={link.link}>{link.name}</a></li>
+              }} className='pl-4  hover:text-blue '><a className='no-underline text-black' href={link.link}>{link.name}</a></li>
             </ul>
           </div>}
         })}
-        <div className={show? 'absolute top-9 left-[90px] duration-700 ease-in-out' : 'top-[-300px] left-[90px] absolute duration-700 ease-in-out'}>
+        <div className={show? 'bg-white w-full h-max text-center absolute top-[4rem] left-[90px] duration-700 ease-in-out' : 'top-[-300px] text-center w-full left-[90px] absolute duration-700 ease-in-out'}>
       {menu[1].items.map((categories) => {
-        return <div className='hidden md:block '>{categories.name}</div>
+        return <>
+        <div className='hidden md:flex flex-col py-2 '>{categories.name}</div>
+        <div className='w-full h-[2px] bg-black'></div>
+        </>
       })}
     </div>
     </div>
@@ -79,7 +83,7 @@ export const Nav = () => {
             if((link.id !== 2)){
           return <div className='pt-3' key={link.id}>
             <ul className='text-center p-3'>
-              <li><a href={link.link}>{link.name}</a></li>
+              <li><a className='no-underline text-black' href={link.link}>{link.name}</a></li>
                 <div className=' bg-gray-500 w-full h-1'/>
             </ul>
           </div>}
