@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Choose = () => {
   return (
-    <div>why choose us</div>
+    <div className=''>
+      <h1 className="font-bold">why choose us</h1>
+      </div>
   )
 }
