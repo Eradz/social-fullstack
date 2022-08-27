@@ -19,7 +19,7 @@ export const Nav = () => {
   const category = menu.map((cate) => {
       return <div>
       <div key={cate.id} className='flex p-2 items-center gap-2'>
-        <a className='no-underline text-black' href={cate.link}>{cate.name}</a></div>
+        <a className='no-underline text-black font-light' href={cate.link}>{cate.name}</a></div>
       </div>
     })
   
@@ -55,7 +55,7 @@ export const Nav = () => {
               <li className=''><a className='no-underline hover:text-blue text-black' href='#'>Promo</a></li>
               <li className='hover:text-blue'><a className='no-underline text-black' href='#'>About us</a></li>
             </ul>
-            <ul className={!show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
+            <ul className={show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
               <li><a className='text-black no-underline' href='#'>Men</a></li>
               <li><a className='text-black no-underline' href='#'>Women</a></li>
               <li><a className='text-black no-underline' href='#'>Watch and Jewelry</a></li>
@@ -83,26 +83,26 @@ export const Nav = () => {
               <div className="flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>
-                <div><a className='text-black no-underline' href='#'>My account</a></div>
+                <div><a className='text-black no-underline font-light' href='#'>My account</a></div>
                 </div>
-                <IoIosArrowDropdown size={25} className='-rotate-90'/>
+                <IoIosArrowDropdown size={20} className='-rotate-90'/>
               </div>
               <div onClick={toogles} className=" flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <BiCategory/>
-                <div><a className='text-black no-underline' href='#'>Categories</a></div>
+                <div><a className='text-black no-underline font-light' href='#'>Categories</a></div>
                 </div>
-                <IoIosArrowDropdown className={show? '-rotate-90 duration-1000 ease-linear': '' } size={25}/>
+                <IoIosArrowDropdown className={show? '-rotate-90 duration-1000 ease-linear': '' } size={20}/>
               </div>
               <div className={!show? 'hidden duration-700 ease-in-out': 'duration-700 ease-in-out'}> 
                 {category}
               </div>
               <div className="flex p-2 items-center gap-2">
                 <BsStar size={20}/>
-                <a className='text-black no-underline' href='#'>Promos</a></div>
+                <a className='text-black no-underline font-light' href='#'>Promos</a></div>
               <div className=' flex items-center gap-2 p-2'>
                 <BsInfoCircle/>
-                <a className='text-black no-underline' href='#'>About us</a></div>
+                <a className='text-black no-underline font-light' href='#'>About us</a></div>
     </div>
     </div>
     </div>

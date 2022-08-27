@@ -9,13 +9,13 @@ import { Choose } from './components/chooseus/Choose';
 function App() {
  
   return (
-    <>
+    <div className='bg-bg'>
    <Nav/>
    <Hero/>
    <Category/>
    <Choose/>
    <Product/>
-    </>
+    </div>
   );
 }
 
