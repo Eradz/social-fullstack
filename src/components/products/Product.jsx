@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar, A11y } from 'swiper';
+import couch from '../../assest/couch.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -42,17 +43,26 @@ export const Product = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
+      {items.map((item) => {
+        return <SwiperSlide>  <div key={item.id} className=' w-[100%] max-w-max'>
+        <div className='max-w-fit'>
+          <img src={item.image} className='max-h-[300px] w-max' />
+        </div>
+        <div>
+          <div>
+            <p>{item.title}</p>
+          </div>
+          <h3>${item.price}</h3>
+        </div>
+      </div></SwiperSlide>
+      })}
+      
+      {/* <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide> */}
       ...
     </Swiper>
-    <div>
-      {items.map((item) =>{
-        return <div>{item.id}</div>
-      })}
-    </div>
+   
     </div>
   )
 }
