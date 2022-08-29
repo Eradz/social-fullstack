@@ -26,7 +26,7 @@ export const itemSlice = createSlice({
         [getItems.fulfilled] : (state,action) => {
             console.log(action)
             state.isload = false;
-           state.items = action.payload;
+           state.items= action.payload;
         },
         [getItems.rejected] : (state,action) => {
             state.items = []
