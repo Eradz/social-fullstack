@@ -44,12 +44,12 @@ export const Product = () => {
     >
       {items.map((item) => {
         return <SwiperSlide>  
-      <div key={item.id} className='bg-blue w-[200px] max-w-max h-[450px]'>
-              <img src={item.image} alt={item.title} className='max-h-[300px] w-[200px] h-[50%]' />
-            <div className='p-2 h-[50%] bg-cyan-700'>
+      <div key={item.id} className=' w-[130px] md:w-[300px] h-[300px] max-w-max md:h-[450px]'>
+              <img src={item.image} alt={item.title} className='max-h-[300px] w-[130px] h-[50%]  md:w-[300px]' />
+            <div className='p-2 h-[50%] '>
             <div>
               <div>
-                <p>{item.title.length < 20? item.title : `${item.title.substring(0, 25)}...`}</p>
+                <p>{item.title.length < 20? item.title : `${item.title.substring(0, 20)}...`}</p>
               </div>
               <h3>${item.price}</h3>
             </div>
