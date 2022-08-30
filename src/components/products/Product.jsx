@@ -44,7 +44,7 @@ export const Product = () => {
     >
       {items.map((item) => {
         return <SwiperSlide>  
-      <div key={item.id} className=' w-[130px] md:w-[300px] h-[300px] max-w-max md:h-[450px]'>
+      <div key={item.id} className=' w-[130px] md:w-[300px] h-[300px] max-w-max md:h-[450px] shadow-3xl'>
               <img src={item.image} alt={item.title} className='max-h-[300px] w-[130px] h-[50%]  md:w-[300px]' />
             <div className='p-2 h-[50%] '>
             <div>
@@ -53,7 +53,7 @@ export const Product = () => {
               </div>
               <h3>${item.price}</h3>
             </div>
-            <button className='border-[1px] border-black p-1 bg-slate-700 font-thin'>ADD TO CART</button>
+            <button className='border-[1px] border-black p-1 hover:bg-slate-700  font-thin'>ADD TO CART</button>
           </div>
       </div>
       </SwiperSlide>
