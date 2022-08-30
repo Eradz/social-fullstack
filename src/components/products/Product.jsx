@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar, A11y } from 'swiper';
-import couch from '../../assest/couch.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,7 +17,7 @@ export const Product = () => {
   
   useEffect(() => {
     dispatch(getItems("/"))
-  }, [])
+  }, [dispatch])
   if (isload){
     return(
       <div>
@@ -44,17 +43,20 @@ export const Product = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {items.map((item) => {
-        return <SwiperSlide>  <div key={item.id} className=' w-[100%] max-w-max'>
-        <div className='max-w-fit'>
-          <img src={item.image} className='max-h-[300px] w-max' />
-        </div>
-        <div>
-          <div>
-            <p>{item.title}</p>
+        return <SwiperSlide>  
+      <div key={item.id} className='bg-blue w-[200px] max-w-max h-[450px]'>
+              <img src={item.image} alt={item.title} className='max-h-[300px] w-[200px] h-[50%]' />
+            <div className='p-2 h-[50%] bg-cyan-700'>
+            <div>
+              <div>
+                <p>{item.title.length < 20? item.title : `${item.title.substring(0, 25)}...`}</p>
+              </div>
+              <h3>${item.price}</h3>
+            </div>
+            <button className='border-[1px] border-black p-1 bg-slate-700 font-thin'>ADD TO CART</button>
           </div>
-          <h3>${item.price}</h3>
-        </div>
-      </div></SwiperSlide>
+      </div>
+      </SwiperSlide>
       })}
       
       {/* <SwiperSlide>Slide 2</SwiperSlide>
