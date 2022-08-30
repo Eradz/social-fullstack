@@ -16,7 +16,7 @@ export const Product = () => {
 
   
   useEffect(() => {
-    dispatch(getItems("/"))
+    dispatch(getItems("?limit=10"))
   }, [dispatch])
   if (isload){
     return(
@@ -32,7 +32,7 @@ export const Product = () => {
         <h1 className='font-bold' >Top Products</h1>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
-      <Swiper
+      <Swiper className='mr-5'
       // install Swiper modules
       modules={[Pagination, Scrollbar, A11y]}
       spaceBetween={50}
@@ -43,17 +43,17 @@ export const Product = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {items.map((item) => {
-        return <SwiperSlide>  
-      <div key={item.id} className=' w-[130px] md:w-[300px] h-[300px] max-w-max md:h-[450px] shadow-3xl'>
+        return <SwiperSlide >  
+      <div key={item.id} className=' w-[130px] md:w-[300px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pb-3'>
               <img src={item.image} alt={item.title} className='max-h-[300px] w-[130px] h-[50%]  md:w-[300px]' />
             <div className='p-2 h-[50%] '>
             <div>
               <div>
-                <p>{item.title.length < 20? item.title : `${item.title.substring(0, 20)}...`}</p>
+                <p>{item.title.length < 20 ? item.title : `${item.title.substring(0, 17)}...`}</p>
               </div>
               <h3>${item.price}</h3>
             </div>
-            <button className='border-[1px] border-black p-1 hover:bg-slate-700  font-thin'>ADD TO CART</button>
+            <button className='border-[1px] border-black p-1 font-thin'>ADD TO CART</button>
           </div>
       </div>
       </SwiperSlide>
