@@ -1,10 +1,10 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import watch from '../../assest/couple-winter-cloths-studio.jpg'
-import first from '../../assest/cropped-image-woman-inputting-card-information-key-phone-laptop-while-shopping-online.jpg'
+import first from '../../assest/arturo-rey-5yP83RhaFGA-unsplash.jpg'
 import man from '../../assest/fashion-portrait-young-businessman-handsome-model-man-casual-cloth-suit-with-accessories-hands.jpg'
 import woman from '../../assest/young-woman-casual-wear-posing-street.jpg'
-import Electronics from '../../assest/electronics1.jpg'
+import Electronics from '../../assest/workplace-business-modern-male-accessories-laptop-black-background.jpg'
 
 export const Hero = () => {
   return (

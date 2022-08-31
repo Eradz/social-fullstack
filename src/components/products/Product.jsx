@@ -32,7 +32,7 @@ export const Product = () => {
         <h1 className='font-bold' >Top Products</h1>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
-      <Swiper className='mr-5'
+      <Swiper className='mr-5 pb-4'
       // install Swiper modules
       modules={[Pagination, Scrollbar, A11y]}
       spaceBetween={50}
@@ -58,11 +58,7 @@ export const Product = () => {
       </div>
       </SwiperSlide>
       })}
-      
-      {/* <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide> */}
-      ...
+
     </Swiper>
    
     </div>
