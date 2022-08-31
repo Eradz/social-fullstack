@@ -4,6 +4,7 @@ import { Nav } from './components/nav/Nav';
 import { Product } from './components/products/Product';
 import Category from './components/category/Category';
 import { Choose } from './components/chooseus/Choose';
+import Faq from './components/faq/Faq';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
    <Category/>
    <Choose/>
    <Product/>
+   <Faq/>
     </div>
   );
 }
