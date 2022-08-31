@@ -4,11 +4,11 @@ import { getItems } from '../redux/items/itemsSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, A11y } from 'swiper';
+import {  Scrollbar, A11y } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
+
 import 'swiper/css/scrollbar';
 export const Product = () => {
   const dispatch = useDispatch()
@@ -34,10 +34,9 @@ export const Product = () => {
       </div>
       <Swiper className='mr-5 pb-4'
       // install Swiper modules
-      modules={[Pagination, Scrollbar, A11y]}
+      modules={[ Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={3}
-      pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
