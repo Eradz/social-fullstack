@@ -2,7 +2,9 @@ export const faqs =[
 {
     id:1,
     q: 'Are all products on Eradz original and genuine?',
-    a: 'Yes. We are committed to offering our customers only 100% genuine and original products. We also take all necessary actions to ensure that any seller found to be selling non-genuine products is immediately delisted from Eradz.'
+    a: 'Yes. We are committed to offering our customers only 100% genuine and original products. We also take all necessary actions to ensure that any seller found to be selling non-genuine products is immediately delisted from Eradz.',
+    hey: "hidden",
+    ho: "text-[14px]"
 },
 {
     id:2,
@@ -12,7 +14,9 @@ export const faqs =[
 {
     id:3,
     q: 'Are all products on Eradz new and unused?',
-    a: 'Eradz normally offers new products from our sellers. However some of our sellers do offer refurbished items at a competitive price. It will be stated clearly on the product page if an items is a refurbished product.'
+    a: 'Eradz normally offers new products from our sellers. However some of our sellers do offer refurbished items at a competitive price. It will be stated clearly on the product page if an items is a refurbished product.',
+    hey: "hidden",
+    ho: 'text-[14px]'
 },
 {
     id:4,
