@@ -8,15 +8,15 @@ import Faq from './components/faq/Faq';
 
 
 function App() {
- 
+
   return (
     <div className='bg-bg'>
-   <Nav/>
-   <Hero/>
-   <Category/>
-   <Choose/>
-   <Product/>
-   <Faq/>
+      <Nav />
+      <Hero />
+      <Category />
+      <Choose />
+      <Product/>
+      <Faq />
     </div>
   );
 }

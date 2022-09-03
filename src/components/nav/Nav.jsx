@@ -17,8 +17,8 @@ export const Nav = () => {
 
   
   const category = menu.map((cate) => {
-      return <div>
-      <div key={cate.id} className='flex p-2 items-center gap-2'>
+      return <div key={cate.id}>
+      <div  className='flex p-2 items-center gap-2'>
         <a className='no-underline text-black font-light' href={cate.link}>{cate.name}</a></div>
       </div>
     })
@@ -53,7 +53,7 @@ export const Nav = () => {
                   <IoIosArrowDropdown className={!show?'rotate-180 duration-1000': 'duration-1000'}/>
               </div>
               <li className=''><a className='no-underline hover:text-blue text-black' href='#'>Promo</a></li>
-              <li className='hover:text-blue'><a className='no-underline text-black' href='#'>About us</a></li>
+              <li className='text-black'><a className='no-underline  hover:text-blue ' href='#'>About us</a></li>
             </ul>
             <ul className={show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
               <li><a className='text-black no-underline' href='#'>Men</a></li>
