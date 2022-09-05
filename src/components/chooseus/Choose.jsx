@@ -13,7 +13,7 @@ export const Choose = () => {
         </div>
         <div className="flex flex-col justify-center pt-3" >
           <h6 className="mb-[-3px] font-semibold">Free Shipping</h6>
-          <p className="font-light">Free on all orders over $50</p>
+          <p className="font-light text-[15px]">Free on all orders over $50</p>
         </div>
         </div>
         <div className="flex justify-start w-[70%] mx-[15%] items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
