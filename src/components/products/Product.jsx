@@ -19,7 +19,7 @@ export const Product = () => {
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getItems("?limit=10"))
+    dispatch(getItems("?limit=14"))
   }, [dispatch])
   if (isload){
     return(
@@ -38,14 +38,14 @@ export const Product = () => {
       // install Swiper modules
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={3}
+      slidesPerView={2}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
       {items.map((item) => {
         return <SwiperSlide >  
-      <div key={item.id} className='rounded-lg w-[220px] md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pb-4 px-2 relative bg-white'>
+      <div key={item.id} className='rounded-lg w-[200px] md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pb-4 px-2 relative bg-white'>
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 

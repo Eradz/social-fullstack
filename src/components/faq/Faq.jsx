@@ -19,8 +19,8 @@ const Faq = () => {
   return (
     <div className='mt-5'>
         <h3 className='mb-4 text-center'>Frequently Asked Questions (FAQ)</h3>
-        <div className='grid grid-cols-1 w-[70%] mx-auto'>{faqs.map((faq, i) => {
-          return <div onClick={() => toogle(i)} key={faq.id} className='mb-4 bg-white shadow-sm cursor-pointer'>
+        <div className='grid grid-cols-1 w-[94%] md-w-[90%] mx-auto p-3'>{faqs.map((faq, i) => {
+          return <div onClick={() => toogle(i)} key={faq.id} className='mb-4 bg-white shadow-sm cursor-pointer px-3'>
           <div   className='flex justify-between item-center p-2'>
             <h5 className='text-[16px] font-semibold'>{faq.q}</h5>
            {open === i? <AiOutlineMinus className='mt-[1%]' size={25}/>
