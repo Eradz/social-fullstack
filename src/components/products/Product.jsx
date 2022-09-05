@@ -45,7 +45,7 @@ export const Product = () => {
     >
       {items.map((item) => {
         return <SwiperSlide >  
-      <div key={item.id} className='rounded-lg w-[200px] md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pb-4 px-2 relative bg-white'>
+      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
@@ -55,7 +55,7 @@ export const Product = () => {
               </div> 
               <img src={item.image} alt={item.title} className=' w-[200px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
             </div>
-            <div className='p-2 h-[50%] flex  '>
+            <div className='p-2 h-[50%] flex '>
             <div>
               <div className='px-2'>
                 <p>{item.title.length < 20 ? item.title : `${item.title.substring(0, 17)}...`}</p>
