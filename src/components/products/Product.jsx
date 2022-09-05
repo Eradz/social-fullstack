@@ -36,6 +36,18 @@ export const Product = () => {
       </div>
       <Swiper className='pb-4'
       // install Swiper modules
+      breakpoints={{
+        576: {
+          width: 576,
+          slidesPerView: 3,
+        },
+        768: {
+          width: 768,
+          slidesPerView: 3,
+        },
+      }}
+    
+    
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={2}
