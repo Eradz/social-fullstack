@@ -13,10 +13,10 @@ export const Choose = () => {
         </div>
         <div className="flex flex-col justify-center pt-3" >
           <h6 className="mb-[-3px] font-semibold">Free Shipping</h6>
-          <p className="font-light">Free on all orders over $50</p>
+          <p className="font-light text-[15px]">Free on all orders over $50</p>
         </div>
         </div>
-        <div className="flex justify-center w-[70%] mx-[15%] items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
+        <div className="flex justify-start w-[70%] mx-[15%] items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
         <div className="bg-green-700 rounded-[50%] w-12 h-12 relative">
           <FaRegMoneyBillAlt className='absolute top-[25%] left-[25%]' size={25}/>
         </div>
@@ -25,7 +25,7 @@ export const Choose = () => {
           <p className="font-light">30 Days Money Back</p>
         </div>
         </div>
-        <div className="flex justify-start  w-[70%] mx-[15%] items-center gap-2 shadow shadow-black  py-3 pr-3 pl-7 rounded-[20px] bg-white">
+        <div className="flex justify-start  w-[70%] mx-[15%] items-center gap-2 shadow shadow-black  p-3 rounded-[20px] bg-white">
         <div className="bg-purple-700 rounded-[50%] w-12 h-12 relative">
           <BsChatLeftText className='absolute top-[25%] left-[25%]' size={25}/>
         </div>
