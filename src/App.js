@@ -5,11 +5,12 @@ import { Product } from './components/products/Product';
 import Category from './components/category/Category';
 import { Choose } from './components/chooseus/Choose';
 import Faq from './components/faq/Faq';
-
+import Footer  from './components/footer/Footer';
 
 function App() {
 
   return (
+    <>
     <div className='bg-bg'>
       <Nav />
       <Hero />
@@ -18,6 +19,8 @@ function App() {
       <Product/>
       <Faq />
     </div>
+      <Footer />
+    </>
   );
 }
 

@@ -73,7 +73,7 @@ export const Nav = () => {
                 </div>
             </div>
     </div>
-    <div className='relative max-w-[900px] md:hidden'>
+    <div className='relative max-w-[900px] md:hidden w-[95%] mx-auto'>
             <input className='px-9 py-2 relative w-full text-xs border-solid border-2 border-stone-900 rounded-[20px]' type='search' placeholder='Search products, brands and categories'/>
             <BsSearch className='absolute top-3 left-3 ' />
     </div>
