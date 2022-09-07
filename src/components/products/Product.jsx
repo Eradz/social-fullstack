@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Scrollbar, A11y } from 'swiper';
+import {Link} from 'react-router-dom'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,7 +20,7 @@ export const Product = () => {
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getItems("?limit=14"))
+    dispatch(getItems("/"))
   }, [dispatch])
   if (isload){
     return(
@@ -32,7 +33,7 @@ export const Product = () => {
     <div className='mt-5'>
       <div className='px-3 flex items-center justify-between'>
         <h1 className='font-bold' >Top Products</h1>
-        <IoIosArrowDropdown className='-rotate-90' size={25}/>
+        <Link to='/category'><IoIosArrowDropdown className='-rotate-90' size={25}/></Link>
       </div>
       <Swiper className='pb-4'
       // install Swiper modules

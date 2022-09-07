@@ -1,27 +1,19 @@
 import './App.css';
-import { Hero } from './components/hero.js/Hero';
-import { Nav } from './components/nav/Nav';
-import { Product } from './components/products/Product';
-import Category from './components/category/Category';
-import { Choose } from './components/chooseus/Choose';
-import Faq from './components/faq/Faq';
 import Footer  from './components/footer/Footer';
+import Home from './components/Home';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Categories from './components/categories/Categories';
-
 function App() {
 
   return (
     <>
-    <div className='bg-bg'>
-      <Nav />
-      <Hero />
-      <Category />
-      <Choose />
-      <Product/>
-      <Faq />
-      <Categories/>
-    </div>
-      <Footer />
+    <Router>
+      <Routes>
+      <Route exact path='/' element={<Home/>} />
+      <Route exact path='/category' element={<Categories/>} />
+      </Routes>
+    </Router>
+    <Footer />
     </>
   );
 }

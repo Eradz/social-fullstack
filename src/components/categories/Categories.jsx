@@ -5,7 +5,10 @@ import { Men } from './Men'
 export default function Categories() {
   return (
     <div>
-        <Men/>
+        <h3>Product Catogories</h3>
+        <div>
+            <Men/>
+        </div>
     </div>
   )
 }
