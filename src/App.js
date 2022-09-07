@@ -6,6 +6,7 @@ import Category from './components/category/Category';
 import { Choose } from './components/chooseus/Choose';
 import Faq from './components/faq/Faq';
 import Footer  from './components/footer/Footer';
+import Categories from './components/categories/Categories';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Choose />
       <Product/>
       <Faq />
+      <Categories/>
     </div>
       <Footer />
     </>
