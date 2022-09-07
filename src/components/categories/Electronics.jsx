@@ -9,7 +9,6 @@ import {  Scrollbar, A11y } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
-
 import 'swiper/css/scrollbar';
 import { getMan } from '../redux/items/eleSlice'
 export const Electronics = () => {
