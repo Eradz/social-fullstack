@@ -31,7 +31,7 @@ export const Men = () => {
   return (
     <div className='mt-5'>
       <div className='px-3 flex items-center justify-between'>
-        <h1 className='font-bold' >Men</h1>
+        <h3 className='font-bold' >Men</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
       <Swiper className='pb-4'
@@ -57,8 +57,8 @@ export const Men = () => {
     >
       {elec.map((item) => {
         return <SwiperSlide >  
-      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
-            <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
+      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+            <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
                <div className='bg-red-500 p-2 rounded-[50%]'>

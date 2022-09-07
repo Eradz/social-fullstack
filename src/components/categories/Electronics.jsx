@@ -2,7 +2,6 @@ import React from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsPatchPlus} from 'react-icons/bs'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
-import { getItems } from '../redux/items/eleSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,14 +11,15 @@ import {  Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
-export const Product = () => {
+import { getMan } from '../redux/items/eleSlice'
+export const Electronics = () => {
   const dispatch = useDispatch()
-  const {items, isload} = useSelector((state) => state.item)
+  const {man, isload} = useSelector((state) => state.elec)
 
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getItems())
+    dispatch(getMan("products?limit=10"))
   }, [dispatch])
   if (isload){
     return(
@@ -31,7 +31,7 @@ export const Product = () => {
   return (
     <div className='mt-5'>
       <div className='px-3 flex items-center justify-between'>
-        <h1 className='font-bold' >Top Products</h1>
+        <h3 className='font-bold' >Electronics</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
       <Swiper className='pb-4'
@@ -46,8 +46,6 @@ export const Product = () => {
           slidesPerView: 3,
         },
       }}
-    
-    
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={2}
@@ -55,17 +53,17 @@ export const Product = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      {items.map((item) => {
-        return <SwiperSlide >  
-      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
-            <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
+      {man.map((item) => {
+        return <SwiperSlide>  
+      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+            <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
                <div className='bg-red-500 p-2 rounded-[50%]'>
                 <AiFillHeart color='white'/>
                </div>
               </div> 
-              <img src={item.image} alt={item.title} className=' w-[200px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+              <img src={item.thumbnail} alt={item.title} className=' w-[200px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
             </div>
             <div className='p-2 h-[50%] flex '>
             <div>
