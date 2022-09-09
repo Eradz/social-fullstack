@@ -7,7 +7,7 @@ export const Choose = () => {
     <div className='mt-5'>
       <h1 className="font-bold mb-4 text-center">Why choose us</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 w-full gap-3'>
-        <div className="flex justify-center w-[70%] mx-auto items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
+        <div className="flex justify-start w-[70%] mx-[15%] items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
         <div className="bg-blue rounded-[50%] w-12 h-12 relative">
           <BsBox className='absolute top-[25%] left-[25%]' size={25}/>
         </div>
