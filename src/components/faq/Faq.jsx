@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
 import {faqs} from './faqs'
+import { motion } from "framer-motion"
 const Faq = () => {
 
 
@@ -20,14 +21,18 @@ const Faq = () => {
     <div className='mt-5'>
         <h3 className='mb-4 text-center'>Frequently Asked Questions (FAQ)</h3>
         <div className='grid grid-cols-1 w-[94%] md-w-[90%] mx-auto p-3'>{faqs.map((faq, i) => {
-          return <div onClick={() => toogle(i)} key={faq.id} className='mb-4 bg-white shadow-sm cursor-pointer px-3'>
-          <div   className='flex justify-between item-center p-2'>
+          return <motion.div
+          transition= {{duration: 0.8}}
+          animate={{ y:50 }}
+          whileInView={{ y:0 }}
+          onClick={() => toogle(i)} key={faq.id} className='mb-4 bg-white shadow-sm cursor-pointer px-3'>
+          <div className='flex justify-between item-center p-2'>
             <h5 className='text-[16px] font-semibold'>{faq.q}</h5>
            {open === i? <AiOutlineMinus className='mt-[1%]' size={25}/>
             :<AiOutlinePlus className='mt-[1%]' size={25}/>}
           </div>
           <p className={open === i? "block" : 'hidden' }>{faq.a}</p>
-            </div>  
+            </motion.div>  
         })} 
           
         </div> 

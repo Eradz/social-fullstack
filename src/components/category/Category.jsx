@@ -22,13 +22,18 @@ function Category() {
         <h1 className='font-bold mb-4'>All Categories</h1>
         <div className="grid md:grid-cols-3  gap-4">
            { categories.map((item) => {
-           return <div key={item.id} className= {`${item.bg} shadow shadow-black w-[100%] flex justify-between pl-8 rounded-[50px]`} >
+           return <motion.div 
+           transition={{duration: 0.8}}
+           initial={{scale: 0, opacity: 0}}
+           whileInView={{scale: 1, opacity: 1}}
+           whileHover={{ scale:1.07 }}
+           key={item.id} className= {`${item.bg} shadow shadow-black w-[100%] flex justify-between pl-8 rounded-[50px]`} >
             <div className="my-auto">
             <h5 className='font-semibold pl-2'>{item.name}</h5>
             <button className='mt-2 px-3 py-2.5 rounded-[25px] bg-white' >{item.button}</button>
             </div>
             <img className='w-[200px] h-[200px]' src={item.img} alt={item.name}/>
-        </div>
+        </motion.div>
            }) 
             }
         </div>
