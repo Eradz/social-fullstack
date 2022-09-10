@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsPatchPlus} from 'react-icons/bs'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
@@ -16,9 +16,17 @@ import 'swiper/css/scrollbar';
 export const Product = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
-
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-  
+  const [on, setOn] = useState(false)
+  const toggle = (i)=>{
+      if(i >= 0){
+        console.log(i)
+        setOn(!on) 
+      }
+      
+      
+  }
+  localStorage.setItem('items', items)
   useEffect(() => {
     dispatch(getItems("/"))
   }, [dispatch])
@@ -56,13 +64,13 @@ export const Product = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      {items.map((item) => {
+      {items.map((item, i) => {
         return <SwiperSlide >  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
-               <div className='bg-red-500 p-2 rounded-[50%]'>
+               <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                 <AiFillHeart color='white'/>
                </div>
               </div> 
