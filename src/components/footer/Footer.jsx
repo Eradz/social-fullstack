@@ -8,9 +8,9 @@ function Footer() {
         <div className='h-max pb-4'>
             <h3 className='text-center mb-4'>Eradz</h3>
             <div className='flex justify-center gap-x-2'>
-            <a href='https://www.instagram.com/andrewanagu' className='text-white bg-icon p-1 rounded-[50%]'><AiOutlineInstagram/></a>
-            <a href='https://twitter.com/anaguchidi35?t=7w-IG_UxIgwHm4ulrzpDSA&s=08' className='text-white  bg-icon p-1 rounded-[50%]'><FiTwitter/></a>
-            <a href='https://github.com/eradz' className='text-white  bg-icon p-1 rounded-[50%]'><FiGithub/></a>
+            <a href='https://www.instagram.com/andrewanagu' className='text-white bg-icon p-1 rounded-[50%] w-[35px] h-[35px] flex justify-center items-center'><AiOutlineInstagram size={18}/></a>
+            <a href='https://twitter.com/anaguchidi35?t=7w-IG_UxIgwHm4ulrzpDSA&s=08' className='text-white  bg-icon p-1 rounded-[50%] w-[35px] h-[35px] flex justify-center items-center'><FiTwitter size={18}/></a>
+            <a href='https://github.com/eradz' className='text-white  bg-icon p-1 rounded-[50%] w-[35px] h-[35px] flex justify-center items-center'><FiGithub size={18}/></a>
             </div>
         </div>
         <div className='flex justify-between gap-x-3'>
@@ -48,9 +48,9 @@ function Footer() {
         <div>
             <h5>Search Product</h5>
             <div className='relative '>
-                <input className='px-9 py-2 relative w-full bg-icon text-xs border-solid border-2 border-stone-900 rounded-[20px]' type='search' placeholder='Search'/>
-                <BsSearch className='absolute top-3 left-3 ' />
-            </div>
+                <input className='px-9 py-2 relative w-full  text-xs bg-gray-700 rounded-[10px]' type='search' placeholder='Search products, brands and categories'/>
+                <BsSearch className='absolute top-2 left-3 ' />
+    </div>
         </div>
     </div>
   )

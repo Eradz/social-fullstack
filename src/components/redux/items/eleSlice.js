@@ -28,6 +28,7 @@ export const getMan = createAsyncThunk(
     .catch((err) => console.log(err))
 } )
 
+localStorage.setItem('dummyjson', getElec)
 export const elecSlice = createSlice({
     name: 'items',
     initialState,
