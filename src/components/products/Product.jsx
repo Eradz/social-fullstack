@@ -19,9 +19,8 @@ export const Product = () => {
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   const [on, setOn] = useState(false)
   const toggle = (i)=>{
-      if(i >= 0){
-        console.log(i)
-        setOn(!on) 
+      if(i >= 0 ){
+        setOn(!on)
       }
       
       

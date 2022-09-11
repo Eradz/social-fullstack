@@ -73,9 +73,9 @@ export const Nav = () => {
                 </div>
             </div>
     </div>
-    <div className='relative max-w-[900px] md:hidden w-[95%] mx-auto'>
-            <input className='px-9 py-2 relative w-full text-xs border-solid border-2 border-stone-900 rounded-[20px]' type='search' placeholder='Search products, brands and categories'/>
-            <BsSearch className='absolute top-3 left-3 ' />
+    <div className='relative max-w-[900px] md:hidden w-[98%] mx-auto '>
+                <input className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories'/>
+                <BsSearch className='absolute top-2 left-3 ' />
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
