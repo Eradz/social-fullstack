@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
-import {AiOutlineEye} from 'react-icons/ai'
+import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import {FaFacebook, FaTwitter} from 'react-icons/fa'
 
 
 export default function Register() {
   const [signup, setSignup] = useState(true)
+  const [show, setShow] = useState(false)
+
 
   return (
     <div className='h-[100vh] pt-9'>
@@ -18,12 +20,18 @@ export default function Register() {
         <input type="text" placeholder='Name' name='name' className={signup? 'p-2 bg-gray-200': 'hidden'} />
         <input type="email" placeholder='Email' name='email' className='p-2 bg-gray-200' />
         <div className='relative'>
-        <input type="password" placeholder='Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
-        <AiOutlineEye size={25} className='absolute right-2 top-[8px]  '/>
+        <input type={!show? "password": 'text'} placeholder='Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
+        {
+          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+        }
         </div>
         <div className={signup? 'relative': 'hidden'}>
-        <input type="password" placeholder='Confirm Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
-        <AiOutlineEye size={25} className='absolute right-2 top-[8px]  '/>
+        <input type={!show? "password": 'text'} placeholder='Confirm Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
+        {
+          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+        }
         </div>
       </div>
       <div className="flex flex-col w-[90%] mx-auto ">
