@@ -4,7 +4,7 @@ import {BsSearch } from 'react-icons/bs'
 import {FiTwitter,FiGithub} from 'react-icons/fi'
 function Footer() {
   return (
-    <div className='bg-ft text-white h-max md:flex md:justify-between p-4 flex-cols'>
+    <div className='bg-ft text-white h-max md:flex md:justify-between p-4 flex-cols font-poppins'>
         <div className='h-max pb-4'>
             <h3 className='text-center mb-4'>Eradz</h3>
             <div className='flex justify-center gap-x-2'>
