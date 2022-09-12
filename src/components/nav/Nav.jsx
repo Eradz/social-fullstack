@@ -63,7 +63,7 @@ export const Nav = () => {
             </ul>
         </div>
              <div className='flex gap-3 items-center justify-center'>
-              <FaRegUser className='hover:text-blue  hover:cursor-pointer'/>
+              <a href='register' className='text-black'><FaRegUser  className='hover:text-blue  hover:cursor-pointer'/></a>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
                      <HiOutlineShoppingCart  size={25}/>
                      <p className=' text-center rounded-full text-sm '>0</p>
@@ -80,13 +80,15 @@ export const Nav = () => {
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
     <div className=''>
+      <a className='text-black no-underline font-light' href='register'>
               <div className="flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>
-                <div><a className='text-black no-underline font-light' href='#'>My account</a></div>
+                <div><a className='text-black no-underline font-light' href='register'>My account</a></div>
                 </div>
                 <IoIosArrowDropdown size={20} className='-rotate-90'/>
               </div>
+          </a>
               <div onClick={toogles} className=" flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <BiCategory/>
