@@ -13,7 +13,7 @@ function App() {
       <Route exact path='/category' element={<Categories/>} />
       </Routes>
     </Router>
-    <Footer />
+    <Footer/>
     </>
   );
 }

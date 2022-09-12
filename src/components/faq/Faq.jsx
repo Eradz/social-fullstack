@@ -26,7 +26,7 @@ const Faq = () => {
           animate={{ y:50 }}
           whileInView={{ y:0 }}
           onClick={() => toogle(i)} key={faq.id} className='mb-4 bg-white shadow-sm cursor-pointer px-3'>
-          <div className='flex justify-between item-center p-2'>
+          <div className='flex justify-between item-center gap-x-2 p-2'>
             <h5 className='text-[16px] font-semibold'>{faq.q}</h5>
            {open === i? <AiOutlineMinus className='mt-[1%]' size={25}/>
             :<AiOutlinePlus className='mt-[1%]' size={25}/>}

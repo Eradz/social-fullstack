@@ -8,7 +8,7 @@ import { Product } from './products/Product'
 
 function Home() {
   return (
-    <div className='bg-bg'>
+    <div className='bg-bg font-poppins'>
     <Nav/>
     <Hero/>
     <Category />
