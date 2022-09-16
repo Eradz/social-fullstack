@@ -4,6 +4,7 @@ import {FaBars, FaRegUser, FaTimes} from 'react-icons/fa'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsSearch, BsStar, BsInfoCircle} from 'react-icons/bs'
 import {BiCategory} from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 
 export const Nav = () => {
@@ -37,7 +38,7 @@ export const Nav = () => {
     <>
     <div className='z-30 bg-white sticky w-full top-0 left-0'>
     <div className=' flex md:justify-around justify-between items-center text-lg font-bold px- gap-[-2rem] p-1'>
-        <h2 className='text-3xl'> Eradz </h2>
+        <h2 className='text-3xl'><a href='/' className='no-underline text-black'>  Eradz </a></h2>
               <div className=' w-6/12 items-center justify-center gap-[-2rem] hidden md:flex'>
                 <div className='relative w-7/12 '>
                   <input className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories'/>
@@ -63,7 +64,7 @@ export const Nav = () => {
             </ul>
         </div>
              <div className='flex gap-3 items-center justify-center'>
-              <a href='register' className='text-black'><FaRegUser  className='hover:text-blue  hover:cursor-pointer'/></a>
+              <a href='/register' className='text-black'><FaRegUser  className='hover:text-blue  hover:cursor-pointer'/></a>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
                      <HiOutlineShoppingCart  size={25}/>
                      <p className=' text-center rounded-full text-sm '>0</p>
@@ -80,7 +81,7 @@ export const Nav = () => {
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
     <div className=''>
-      <a className='text-black no-underline font-light' href='register'>
+      <a className='text-black no-underline font-light' href='/register'>
               <div className="flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>

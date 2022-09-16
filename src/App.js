@@ -5,10 +5,12 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Categories from './components/categories/Categories';
 import Register from './components/register/Register';
 import { Product } from './components/product/Product';
+import { Nav } from './components/nav/Nav';
 function App() {
 
   return (
     <div  className="font-poppins">
+      <Nav/>
     <Router>
       <Routes>
       <Route exact path='/' element={<Home/>} />
