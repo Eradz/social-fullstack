@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Scrollbar, A11y } from 'swiper';
+import {Link} from 'react-router-dom'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -79,7 +80,10 @@ export const Men = () => {
               })}
               </div>
             </div>
-           <div className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg "><BsPatchPlus className='text-white' size={20}/></div>
+            <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
+             className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
+            <BsPatchPlus className='text-white' size={20}/>
+           </Link>
           </div>
 
       </div>

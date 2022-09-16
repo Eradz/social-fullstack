@@ -14,7 +14,7 @@ export const Choose = () => {
       <h1 className="font-bold mb-4 text-center">Why choose us</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 w-full gap-3'>
         {choice.map((item) => {
-          return  <motion.div
+          return  <motion.div key={item.name}
           transition= {{duration: 0.8}}
           animate={{ x:50, opacity: 0.5}}
           whileInView={{ x:0, opacity: 1}}

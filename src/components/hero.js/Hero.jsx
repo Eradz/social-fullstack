@@ -15,9 +15,9 @@ export const Hero = () => {
           alt="Second slide"
         />
         <Carousel.Caption className='text-[12px] md:text-[20px] font-semibold'>
-          <h3><w className='font-bold'>Shopping</w> Just Got Easier</h3>
+          <h3><span className='font-bold'>Shopping</span> Just Got Easier</h3>
           <p className=''>Shop now with Eradz store which saves<br/> you the hassel of stepping out to get what you need </p>
-          <button className='border-2 py-1 px-2 rounded-[20px]'>Get started</button>
+          <button className='border-2 py-1 px-2 rounded-[20px]'><a className='no-underline text-white' href='register'>Get started</a></button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -27,9 +27,9 @@ export const Hero = () => {
           alt="First slide"
         />
         <Carousel.Caption className='text-[12px] md:text-[20px] font-semibold'>
-          <h3><w className='md:font-bold'>Shopping</w> Just Got Easier</h3>
+          <h3><span className='md:font-bold'>Shopping</span> Just Got Easier</h3>
           <p className=''>Shop now with Eradz store which saves<br/> you the hassel of stepping out to get what you need </p>
-          <button className='border-2 py-1 px-2 rounded-[20px]'>Get started</button>
+          <button className='border-2 py-1 px-2 rounded-[20px]'><a className='no-underline text-white' href='register'>Get started</a></button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -39,9 +39,9 @@ export const Hero = () => {
           alt="main slide"
         />
         <Carousel.Caption className='text-[12px] md:text-[20px] font-semibold'>
-          <h3><w className='font-bold'>Shopping</w> Just Got Easier</h3>
+          <h3><span className='font-bold'>Shopping</span> Just Got Easier</h3>
           <p className=''>Shop now with Eradz store which saves<br/> you the hassel of stepping out to get what you need </p>
-          <button className='border-2 py-1 px-2 rounded-[20px]'>Get started</button>
+          <button className='border-2 py-1 px-2 rounded-[20px]'><a className='no-underline text-white' href='register'>Get started</a></button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -51,10 +51,11 @@ export const Hero = () => {
           alt="Third slide"
         />
         <Carousel.Caption className='text-[12px] md:text-[20px] font-semibold'>
-          <h3><w className='font-bold'>Shopping</w> Just Got Easier</h3>
+          <h3><span className='font-bold'>Shopping</span> Just Got Easier</h3>
           <p className=''>Shop now with Eradz store which saves<br/> you the hassel of stepping out to get what you need </p>
-          <button className='border-2 py-1 px-2 rounded-[20px]'>Get started</button>
+          <button className='border-2 py-1 px-2 rounded-[20px]'><a className='no-underline text-white' href='register'>Get started</a></button>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>  )
+    </Carousel>  
+    )
 }

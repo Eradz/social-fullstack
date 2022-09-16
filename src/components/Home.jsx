@@ -4,7 +4,7 @@ import { Choose } from './chooseus/Choose'
 import Faq from './faq/Faq'
 import { Hero } from './hero.js/Hero'
 import { Nav } from './nav/Nav'
-import { Product } from './products/Product'
+import { Products } from './products/Products'
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
     <Hero/>
     <Category />
     <Choose/>
-    <Product/>
+    <Products/>
     <Faq/>
   </div>
   )
