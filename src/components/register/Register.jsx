@@ -10,10 +10,10 @@ export default function Register() {
 
 
   return (
-    <div className='h-[100vh] pt-9 md:w-[80%] mx-auto'>
+    <div className='h-[100vh] py-9 md:w-[80%] mx-auto '>
       <div className='flex justify-center gap-4'>
-        <h2 onClick={() => setSignup(true)} className='cursor-pointer font-semibold'>Sign-up</h2>
-        <h2 onClick={() => setSignup(false)} className='cursor-pointer font-semibold'>Login</h2>
+        <h2 onClick={() => setSignup(true)} className={signup? 'cursor-pointer font-semibold text-blue': 'cursor-pointer font-semibold'}>Sign-up</h2>
+        <h2 onClick={() => setSignup(false)} className={!signup? 'cursor-pointer font-semibold text-blue': 'cursor-pointer font-semibold'}>Login</h2>
       </div>
       <span className='flex justify-center'>{signup? <h3>Sign-up</h3>: <h3>login</h3>}</span>
       <div className='flex flex-col gap-4  w-[90%] mx-auto md:w-[98%]'>
@@ -35,9 +35,9 @@ export default function Register() {
         </div>
       </div>
       <div className="flex flex-col w-[90%] mx-auto ">
-        <label for="agree"  >
+        <label for="agree" className='text-[13px] ' >
         <input type="checkbox" name="agree" />
-          I agree to the <a className='text-blue cursor-pointer no-underline'>Terms and Conditions</a> of Eradz co.
+          <span className='ml-2'>I agree to the <a className='text-blue cursor-pointer no-underline'>Terms and Conditions</a> of Eradz co.</span>
         </label>
       <button className='bg-blue py-2 w-[70%] mx-auto text-white font-semibold mt-2'>{signup?  <span>Sign Up</span>: <span>Login</span>}</button>
       </div>
