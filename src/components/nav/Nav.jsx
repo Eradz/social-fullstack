@@ -40,10 +40,10 @@ export const Nav = () => {
         <h2 className='text-3xl'> Eradz </h2>
               <div className=' w-6/12 items-center justify-center gap-[-2rem] hidden md:flex'>
                 <div className='relative w-7/12 '>
-                  <input className='px-9 py-2 relative w-full text-xs border-solid border-[1px] border-stone-700 rounded-[20px]' type='search' placeholder='Search products, brands and categories'/>
+                  <input className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories'/>
                   <BsSearch className='absolute top-2 left-3 ' />
                 </div>
-                  <button className='border-4 bg-blue py-2 px-4 rounded-xl'>SEARCH</button>
+                  <button className='text-white border-4 bg-blue py-1 px-4 rounded-xl'>Search</button>
               </div>
         <div className='md:flex hidden ml-[-5rem] relative'> 
             <ul className='flex justify-between items-center gap-4 mt-2 font-medium '>
@@ -84,7 +84,7 @@ export const Nav = () => {
               <div className="flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>
-                <div><a className='text-black no-underline font-light' href='register'>My account</a></div>
+                <div><span className='text-black no-underline font-light' href='register'>My account</span></div>
                 </div>
                 <IoIosArrowDropdown size={20} className='-rotate-90'/>
               </div>

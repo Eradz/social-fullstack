@@ -13,7 +13,7 @@ import {Link} from 'react-router-dom'
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
-export const Product = () => {
+export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
@@ -64,7 +64,7 @@ export const Product = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {items.map((item, i) => {
-        return <SwiperSlide >  
+        return <SwiperSlide>  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
@@ -87,7 +87,10 @@ export const Product = () => {
               })}
               </div>
             </div>
-           <div className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg "><BsPatchPlus className='text-white' size={20}/></div>
+            <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
+             className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
+            <BsPatchPlus className='text-white' size={20}/>
+           </Link>
           </div>
 
       </div>

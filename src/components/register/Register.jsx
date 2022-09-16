@@ -10,7 +10,7 @@ export default function Register() {
 
 
   return (
-    <div className='h-[100vh] pt-9'>
+    <div className='h-[100vh] pt-9 md:w-[80%] mx-auto'>
       <div className='flex justify-center gap-4'>
         <h2 onClick={() => setSignup(true)} className='cursor-pointer font-semibold'>Sign-up</h2>
         <h2 onClick={() => setSignup(false)} className='cursor-pointer font-semibold'>Login</h2>
@@ -22,15 +22,15 @@ export default function Register() {
         <div className='relative'>
         <input type={!show? "password": 'text'} placeholder='Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
         {
-          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
-          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px] cursor-pointer '/>
+          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  cursor-pointer'/>
         }
         </div>
         <div className={signup? 'relative': 'hidden'}>
         <input type={!show? "password": 'text'} placeholder='Confirm Password' name='password' className='p-2 bg-gray-200 w-[100%]' />
         {
-          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
-          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  '/>
+          !show? <AiOutlineEye onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px]  cursor-pointer'/>
+          :<AiOutlineEyeInvisible onClick={() => setShow(!show)} size={25} className='absolute right-2 top-[8px] cursor-pointer '/>
         }
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function Register() {
         <FaTwitter size={30} className='text-blue cursor-pointer'/>
       </div>
       </div>
-      <span className='flex justify-center'>{signup? <span>Already Have An Account?<h onClick={() => setSignup(false)} className="text-blue cursor-pointer"> Sign in</h></span>: <span>Not a member? <h onClick={() => setSignup(true)} className="text-blue cursor-pointer">Sign up</h></span>}</span>
+      <span className='flex justify-center'>{signup? <span>Already Have An Account?<span onClick={() => setSignup(false)} className="text-blue cursor-pointer"> Sign in</span></span>: <span>Not a member? <span onClick={() => setSignup(true)} className="text-blue cursor-pointer">Sign up</span></span>}</span>
     </div>
   )
 }
