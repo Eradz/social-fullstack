@@ -27,7 +27,7 @@ export const Product = () => {
           setOn(!on)
   }
   return (
-    <div className='h-[100vh] flex flex-col gap-4'>
+    <div className='h-[100vh] flex flex-col gap-4 py-4'>
     <div className='p-3 bg-bg' >
           <div className='flex justify-between '>
               <Link to='/category' className='text-black'>

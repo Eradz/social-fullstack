@@ -45,10 +45,9 @@ export const Products = () => {
   
   return (
     <div className='mt-5'>
-      <div className='px-3 flex items-center justify-between'>
-        <h1 className='font-bold' >Top Products</h1>
-        <Link to='/category'><IoIosArrowDropdown className='-rotate-90' size={25}/></Link>
-      </div>
+      <Link to='/category' className='px-3 flex no-underline items-center justify-between text-black'>
+        <h1 className='font-bold ' >Top Products</h1>
+        <IoIosArrowDropdown className='-rotate-90' size={25}/></Link>
       <Swiper className='pb-4'
       // install Swiper modules
       breakpoints={{
