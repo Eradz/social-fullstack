@@ -27,16 +27,14 @@ export const Product = () => {
           setOn(!on)
   }
   return (
-    <div>
+    <div className='h-[100vh] flex flex-col gap-4'>
     <div className='p-3 bg-bg' >
           <div className='flex justify-between '>
               <Link to='/category' className='text-black'>
               <BiArrowFromRight size={25}/>
               </Link>
             <h3>{item.title}</h3>
-            <div className='p-1 bg-white shadow shadow-black'>
               <AiFillHeart onClick={() =>toggle()} className={on? `text-red-500 cursor-pointer`: `text-icon cursor-pointer`} size={25}/>
-            </div>
           </div>
           <Swiper className='pb-4'
           // install Swiper modules
