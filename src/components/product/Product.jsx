@@ -4,13 +4,13 @@ import { BiArrowFromRight } from 'react-icons/bi'
 import { useLocation } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import itemsSlice from '../redux/items/itemsSlice';
+
 
 export const Product = () => {
   const location = useLocation()
   console.log(location.state.from)
   const item = location.state.from
-
+  
 
   const [on, setOn] = useState(false)
   const toggle = ()=>{
@@ -31,7 +31,7 @@ export const Product = () => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)} >
         {item.images.map((images) => {
-         return <SwiperSlide className='w-[200px] h-[300px]'><img src={images} alt={item.title} /></SwiperSlide>
+         return <SwiperSlide className='w-[200px] h-[200px]'><img src={images} alt={item.title} className='w-full h-[300px]'/></SwiperSlide>
         })
     
         }

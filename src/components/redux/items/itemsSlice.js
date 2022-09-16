@@ -9,7 +9,7 @@ const initialState = {
 export const getItems = createAsyncThunk(
     'items/getItems', 
    async (name) => {
-    return fetch(`https://fakestoreapi.com/products${name}`)
+    return fetch(`https://dummyjson.com/products?skip=0&limit=100${name}`)
     .then(res=>res.json())
     .catch((err) => console.log(err))
 } )
@@ -23,8 +23,9 @@ export const itemSlice = createSlice({
             state.isload = true;
         },
         [getItems.fulfilled] : (state,action) => {
+            console.log(action.payload.products)
             state.isload = false;
-           state.items= action.payload;
+           state.items= action.payload.products;
         },
         [getItems.rejected] : (state,action) => {
             state.items = []

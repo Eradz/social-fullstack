@@ -13,6 +13,7 @@ import {Link} from 'react-router-dom'
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
+import { createContext } from 'react'
 export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
@@ -22,12 +23,10 @@ export const Products = () => {
       if(i >= 0 ){
         setOn(!on)
       }
-      
-      
   }
   localStorage.setItem('items', items)
   useEffect(() => {
-    dispatch(getItems("/"))
+    dispatch(getItems(""))
   }, [dispatch])
   if (isload){
     return(
@@ -36,6 +35,7 @@ export const Products = () => {
         </div>
     )
   }
+  
   return (
     <div className='mt-5'>
       <div className='px-3 flex items-center justify-between'>
@@ -64,8 +64,9 @@ export const Products = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {items.map((item, i) => {
-        return <SwiperSlide>  
-      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+        if(i < 20){
+          return <SwiperSlide>  
+      <div key={item.id} className='rounded-lg w-max h-[300px] md:h-[450px] shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
@@ -73,10 +74,10 @@ export const Products = () => {
                 <AiFillHeart color='white'/>
                </div>
               </div> 
-              <img src={item.image} alt={item.title} className=' w-[200px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+              <img src={item.thumbnail} alt={item.title} className=' w-[200px] md:w-full max-h-[300px] h-[80%] mx-auto ' /> 
             </div>
-            <div className='p-2 h-[50%] flex '>
-            <div>
+            <div className='p-2 h-[50%] flex'>
+            <div >
               <div className='px-2'>
                 <p>{item.title.length < 20 ? item.title : `${item.title.substring(0, 17)}...`}</p>
               </div>
@@ -95,6 +96,8 @@ export const Products = () => {
 
       </div>
       </SwiperSlide>
+        }
+        
       })}
 
     </Swiper>
@@ -102,3 +105,4 @@ export const Products = () => {
     </div>
   )
 }
+
