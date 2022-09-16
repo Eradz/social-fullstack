@@ -17,7 +17,14 @@ import { createContext } from 'react'
 export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
-  const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+  const stars = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+  const stars2 = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar className="text-icon"/>]
+  const star5 = stars.map((star) => {
+    return <span className='text-orange-500'>{star}</span>
+})
+  const star4 = stars2.map((star) => {
+    return <span className='text-orange-500'>{star}</span>
+})
   const [on, setOn] = useState(false)
   const toggle = (i)=>{
       if(i >= 0 ){
@@ -82,10 +89,9 @@ export const Products = () => {
                 <p>{item.title.length < 20 ? item.title : `${item.title.substring(0, 17)}...`}</p>
               </div>
               <h3>${item.price}</h3>
-              <div className="flex">
-              {star.map((star) =>{
-                return <span className='text-orange-500'>{star}</span>
-              })}
+              <div className='flex'>
+                {item.rating < 4.5 ?
+                  star4 : star5 }
               </div>
             </div>
             <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
@@ -93,7 +99,6 @@ export const Products = () => {
             <BsPatchPlus className='text-white' size={20}/>
            </Link>
           </div>
-
       </div>
       </SwiperSlide>
         }
