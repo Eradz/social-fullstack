@@ -21,9 +21,16 @@ export const itemSlice = createSlice({
     initialState,
     reducers:{
         addCart: (state, action) => {
-            console.log(action.payload)
+            if(action.payload === "nothing"){
+                state.message = "Item has already been added to cart"
+                alert(state.message)
+            } else{
             state.cart = state.cart + 1
             state.cartItem.push(action.payload)
+            state.message = `${action.payload.title} has been added to cart, you have ${state.cart } items in your cart`
+            alert(state.message)
+            }
+            
         },
     }
     ,
