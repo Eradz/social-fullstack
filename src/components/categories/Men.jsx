@@ -58,8 +58,8 @@ export const Men = () => {
     >
       {elec.map((item, i) => {
         if (i >= 50 && i < 66 ){
-        return <SwiperSlide >  
-      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+        return <SwiperSlide key={item.title} >  
+      <div className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[180px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 

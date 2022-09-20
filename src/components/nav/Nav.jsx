@@ -50,13 +50,13 @@ export const Nav = () => {
               </div>
         <div className='md:flex hidden ml-[-5rem] relative'> 
             <ul className='flex justify-between items-center gap-4 mt-2 font-medium '>
-              <li className='hover:text-blue'><a className='no-underline text-black'  href='#'>Home</a></li>
+              <li className='hover:text-blue'><a className='no-underline text-black'  href='/'>Home</a></li>
               <div onClick={toogles} className='relative flex justify-between items-center gap-1 hover:text-blue hover:cursor-pointer'>
-                  <li className='hover:text-blue'><a className='no-underline text-black' href='#'>Category</a></li>
+                  <li className='hover:text-blue'><a className='no-underline text-black' href='/category'>Category</a></li>
                   <IoIosArrowDropdown className={!show?'rotate-180 duration-1000': 'duration-1000'}/>
               </div>
-              <li className=''><a className='no-underline hover:text-blue text-black' href='#'>Promo</a></li>
-              <li className='text-black'><a className='no-underline  hover:text-blue ' href='#'>About us</a></li>
+              <li className=''><a className='no-underline hover:text-blue text-black' href='/'>Promo</a></li>
+              <li className='text-black'><a className='no-underline  hover:text-blue ' href='/'>About us</a></li>
             </ul>
             <ul className={show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
               <li><a className='text-black no-underline' href='#'>Men</a></li>
@@ -94,12 +94,12 @@ export const Nav = () => {
                 <IoIosArrowDropdown size={20} className='-rotate-90'/>
               </div>
           </a>
-              <div onClick={toogles} className=" flex p-2 items-end justify-between">
+              <div className=" flex p-2 items-end justify-between">
                 <div className="flex items-center gap-2">
                 <BiCategory/>
-                <div><a className='text-black no-underline font-light' href='#'>Categories</a></div>
+                <div><a className='text-black no-underline font-light' href='/category'>Categories</a></div>
                 </div>
-                <IoIosArrowDropdown className={show? '-rotate-90 duration-1000 ease-linear': '' } size={20}/>
+                <IoIosArrowDropdown onClick={toogles}  className={show? '-rotate-90 duration-1000 ease-linear cursor-pointer': 'cursor-pointer' } size={20}/>
               </div>
               <div className={!show? 'hidden duration-700 ease-in-out': 'duration-700 ease-in-out'}> 
                 {category}
