@@ -20,7 +20,7 @@ export const Men = () => {
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getElec("products?skip=50&limit=15"))
+    dispatch(getElec(""))
   }, [dispatch])
   if (isload){
     return(
@@ -56,7 +56,8 @@ export const Men = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      {elec.map((item) => {
+      {elec.map((item, i) => {
+        if (i >= 50 && i < 66 ){
         return <SwiperSlide >  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
@@ -87,7 +88,7 @@ export const Men = () => {
           </div>
 
       </div>
-      </SwiperSlide>
+      </SwiperSlide>}
       })}
 
     </Swiper>

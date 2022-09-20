@@ -11,15 +11,15 @@ import {Link} from 'react-router-dom'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import { getMan } from '../redux/items/eleSlice'
+import { getElec } from '../redux/items/eleSlice'
 export const Electronics = () => {
   const dispatch = useDispatch()
-  const {man, isload} = useSelector((state) => state.elec)
+  const {elec, isload} = useSelector((state) => state.elec)
 
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getMan("products?limit=10"))
+    dispatch(getElec(""))
   }, [dispatch])
   if (isload){
     return(
@@ -53,7 +53,8 @@ export const Electronics = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      {man.map((item) => {
+      {elec.map((item, i) => {
+        if(i < 10)
         return <SwiperSlide>  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 

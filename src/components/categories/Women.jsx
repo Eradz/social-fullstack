@@ -12,15 +12,15 @@ import {Link} from 'react-router-dom'
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
-import { getWoman } from '../redux/items/eleSlice'
+import { getElec } from '../redux/items/eleSlice'
 export const Women = () => {
   const dispatch = useDispatch()
-  const {woman, isload} = useSelector((state) => state.elec)
+  const {elec, isload} = useSelector((state) => state.elec)
 
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   
   useEffect(() => {
-    dispatch(getWoman("products/search?q=women"))
+    dispatch(getElec(""))
   }, [dispatch])
   if (isload){
     return(
@@ -56,7 +56,8 @@ export const Women = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      {woman.map((item) => {
+      {elec.map((item, i) => {
+        if(i > 34 && i < 50 && i !== 37 )
         return <SwiperSlide >  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
@@ -71,7 +72,7 @@ export const Women = () => {
             <div className='p-2 h-[50%] flex '>
             <div>
               <div className='px-2'>
-                <p>{item.title.length < 20 ? item.title : `${item.title.substring(0, 17)}...`}</p>
+                <p>{item.title.length < 20 ? item.title.charAt(0).toUpperCase() + item.title.slice(1) : `${(item.title.charAt(0).toUpperCase() + item.title.slice(1)).substring(0, 17)}...`}</p>
               </div>
               <h3>${item.price}</h3>
               <div className="flex">
