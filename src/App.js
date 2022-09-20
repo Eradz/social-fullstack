@@ -6,6 +6,8 @@ import Categories from './components/categories/Categories';
 import Register from './components/register/Register';
 import { Product } from './components/product/Product';
 import { Nav } from './components/nav/Nav';
+import { ToastContainer } from 'react-toastify';
+
 function App() {
 
   return (
@@ -20,6 +22,7 @@ function App() {
       </Routes>
     </Router>
     <Footer/>
+    <ToastContainer />
     </div>
   );
 }
