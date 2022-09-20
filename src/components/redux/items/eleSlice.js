@@ -22,7 +22,6 @@ export const elecSlice = createSlice({
             state.isload = true;
         },
         [getElec.fulfilled] : (state,action) => {
-            console.log(action)
             state.isload = false;
            state.elec= action.payload.products;
         },
