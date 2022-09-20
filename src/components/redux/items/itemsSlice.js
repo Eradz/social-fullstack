@@ -3,6 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     items: [],
+    cart: 0,
+    cartItem: [],
     isload: true,
     message: ''
 }
@@ -17,6 +19,21 @@ export const getItems = createAsyncThunk(
 export const itemSlice = createSlice({
     name: 'items',
     initialState,
+    reducers:{
+        addCart: (state, action) => {
+            if(action.payload === "nothing"){
+                state.message = "Item has already been added to cart"
+                alert(state.message)
+            } else{
+            state.cart = state.cart + 1
+            state.cartItem.push(action.payload)
+            state.message = `${action.payload.title} has been added to cart, you have ${state.cart } items in your cart`
+            alert(state.message)
+            }
+            
+        },
+    }
+    ,
     extraReducers: {
         [getItems.pending] : (state) => {
             state.items = []; 
@@ -35,5 +52,5 @@ export const itemSlice = createSlice({
     }
 })
 
-
+export const { addCart} = itemSlice.actions
 export default itemSlice.reducer
