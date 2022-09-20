@@ -53,7 +53,7 @@ export const Product = () => {
               <Link to='/category' className='text-black'>
               <BiArrowFromRight size={25}/>
               </Link>
-            <h3>{item.title}</h3>
+            <h3 className='text-center'>{item.title}</h3>
               <AiFillHeart onClick={() =>toggle()} className={on? `text-red-500 cursor-pointer`: `text-icon cursor-pointer`} size={25}/>
           </div>
           <Swiper className='pb-4'
