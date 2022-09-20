@@ -4,10 +4,12 @@ import {FaBars, FaRegUser, FaTimes} from 'react-icons/fa'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsSearch, BsStar, BsInfoCircle} from 'react-icons/bs'
 import {BiCategory} from 'react-icons/bi'
+import { useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
 export const Nav = () => {
+  const {cart} = useSelector((state) => state.item)
   const menu =[
     {id: 1, name: 'Male wears', link: '#'},
     {id: 2, name: 'Female wears', link: '#'},
@@ -67,7 +69,9 @@ export const Nav = () => {
               <a href='/register' className='text-black'><FaRegUser  className='hover:text-blue  hover:cursor-pointer'/></a>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
                      <HiOutlineShoppingCart  size={25}/>
-                     <p className=' text-center rounded-full text-sm '>0</p>
+                     <p
+                     
+                      className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
                 {nav? <FaTimes size={25}/> :  <FaBars size={25}/>}

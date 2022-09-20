@@ -3,6 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     items: [],
+    cart: 0,
+    cartItem: [],
     isload: true,
     message: ''
 }
@@ -17,6 +19,14 @@ export const getItems = createAsyncThunk(
 export const itemSlice = createSlice({
     name: 'items',
     initialState,
+    reducers:{
+        addCart: (state, action) => {
+            console.log(action.payload)
+            state.cart = state.cart + 1
+            state.cartItem.push(action.payload)
+        },
+    }
+    ,
     extraReducers: {
         [getItems.pending] : (state) => {
             state.items = []; 
@@ -35,5 +45,5 @@ export const itemSlice = createSlice({
     }
 })
 
-
+export const { addCart} = itemSlice.actions
 export default itemSlice.reducer
