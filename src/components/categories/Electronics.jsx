@@ -57,14 +57,14 @@ export const Electronics = () => {
         if(i < 10)
         return <SwiperSlide>  
       <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
-            <div className=' w-[200px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
+            <div className=' w-[180px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
                <div className='bg-red-500 p-2 rounded-[50%]'>
                 <AiFillHeart color='white'/>
                </div>
               </div> 
-              <img src={item.thumbnail} alt={item.title} className=' w-[200px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+              <img src={item.thumbnail} alt={item.title} className=' w-[180px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
             </div>
             <div className='p-2 h-[50%] flex '>
             <div>

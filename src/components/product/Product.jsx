@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Navigation, A11y,Pagination } from 'swiper';
 import { useSelector, useDispatch } from 'react-redux'
 import { addCart } from '../redux/items/itemsSlice'
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'swiper/css';
 import 'swiper/css/pagination'
 import 'swiper/css/navigation';
@@ -15,21 +17,34 @@ export const Product = () => {
   const location = useLocation()
   const item = location.state.from
   const dispatch = useDispatch()
-  const {cartItem} = useSelector((state) => state.item)
+  const {cartItem, message} = useSelector((state) => state.item)
   const last = cartItem[cartItem.length - 1]
+
   
 
   const stars = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
   const stars2 = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar className="text-icon"/>]
   const star5 = stars.map((star, i) => {
-    return <span className='text-orange-500'>{star}</span>
-})
+    return <span className='text-orange-500'>{star}</span>})
   const star4 = stars2.map((star, i) => {
-    return <span className='text-orange-500'>{star}</span>
-})
+    return <span className='text-orange-500'>{star}</span>})
   const [on, setOn] = useState(false)
   const toggle = ()=>{
           setOn(!on)
+  }
+ 
+
+
+
+  const push = ()=>{
+   if(last === item){
+    dispatch(addCart("nothing"))
+    toast(message)
+
+   }else{
+    dispatch(addCart(item))
+    toast(`${item.title} has been added to cart`)
+   }
   }
   return (
     <div className='h-[100vh] flex flex-col gap-4 '>
@@ -76,7 +91,7 @@ export const Product = () => {
     </div>
     <div className='flex justify-center gap-5'>
     <button className='px-3 py-2 text-blue border-blue border-2 cursor-pointer hover:text-black hover:bg-blue'>Checkout</button>
-    <button onClick={() => {last === item ? dispatch(addCart("nothing")) : dispatch(addCart(item))}} className='px-3 py-2 bg-blue border-2 border-blue cursor-pointer hover:text-blue hover:bg-white'>Add to cart</button>
+    <button onClick={() => {push()}} className='px-3 py-2 bg-blue border-2 border-blue cursor-pointer hover:text-blue hover:bg-white'>Add to cart</button>
     </div>
     </div>
   )
