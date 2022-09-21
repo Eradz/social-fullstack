@@ -13,7 +13,6 @@ import {Link} from 'react-router-dom'
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
-import { createContext } from 'react'
 export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
@@ -31,7 +30,7 @@ export const Products = () => {
         setOn(!on)
       }
   }
-  localStorage.setItem('items', items)
+  localStorage.setItem('items', JSON.stringify(items))
   useEffect(() => {
     dispatch(getItems(""))
   }, [dispatch])

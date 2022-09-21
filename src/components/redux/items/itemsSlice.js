@@ -8,6 +8,7 @@ const initialState = {
     isload: true,
     message: ''
 }
+
 export const getItems = createAsyncThunk(
     'items/getItems', 
    async (name) => {
@@ -26,6 +27,7 @@ export const itemSlice = createSlice({
             } else if (action.payload){
             state.cart = state.cart + 1
             state.cartItem.push(action.payload)
+            localStorage.setItem("cart", JSON.stringify(state.cartItem))
             }
             
         },

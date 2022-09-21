@@ -14,8 +14,9 @@ function App() {
 
   return (
     <div  className="font-poppins">
-      <Nav/>
+      
     <Router>
+    <Nav/>
       <Routes>
       <Route exact path='/' element={<Home/>} />
       <Route  path='/category' element={<Categories/>} />

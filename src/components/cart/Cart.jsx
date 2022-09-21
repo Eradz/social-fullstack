@@ -6,8 +6,11 @@ import { useSelector,  } from 'react-redux'
 import watch from '../../assest/watch.png'
 
 export function Cart() {
-    const {cart, cartItem} = useSelector((state) => state.item)
-    console.log(cartItem[0])
+    const {cartItem} = useSelector((state) => state.item)
+    console.log(cartItem)
+    localStorage.setItem('cart', JSON.stringify(cartItem))
+    const item = [localStorage.getItem('cart')]
+    console.log(item)
   return (
     <div className='bg-bg'>
         <div>
