@@ -9,13 +9,13 @@ export function Cart() {
     const {cartItem} = useSelector((state) => state.item)
     console.log(cartItem)
     localStorage.setItem('cart', JSON.stringify(cartItem))
-    const item = [localStorage.getItem('cart')]
+    const item = JSON.parse(localStorage.getItem('cart')) 
     console.log(item)
   return (
     <div className='bg-bg'>
         <div>
             <div className='flex gap-[40%] py-3 bg-white'>
-                <IoMdArrowRoundBack size={30} className="ml-6 cursor-pointer"/>
+                <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer"/>
                 <h3 className='text-center font-semibold'>My Cart</h3>
             </div>
             <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
