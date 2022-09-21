@@ -68,10 +68,8 @@ export const Nav = () => {
              <div className='flex gap-3 items-center justify-center'>
               <a href='/register' className='text-black'><FaRegUser  className='hover:text-blue  hover:cursor-pointer'/></a>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
-                     <HiOutlineShoppingCart  size={25}/>
-                     <p
-                     
-                      className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
+                    <a href='/cart' className="text-black cursor-pointer"> <HiOutlineShoppingCart  size={25}/></a>
+                     <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
                 {nav? <FaTimes size={25}/> :  <FaBars size={25}/>}
