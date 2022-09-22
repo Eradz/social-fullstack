@@ -6,14 +6,13 @@ import { getItems } from '../redux/items/itemsSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Scrollbar, A11y } from 'swiper';
+import {  Navigation, A11y } from 'swiper';
 import {Link} from 'react-router-dom'
 
 // Import Swiper styles
 import 'swiper/css';
-
-import 'swiper/css/scrollbar';
-import { createContext } from 'react'
+import 'swiper/css/navigation';
+import { FaRegEye } from 'react-icons/fa'
 export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
@@ -31,7 +30,7 @@ export const Products = () => {
         setOn(!on)
       }
   }
-  localStorage.setItem('items', items)
+  localStorage.setItem('items', JSON.stringify(items))
   useEffect(() => {
     dispatch(getItems(""))
   }, [dispatch])
@@ -46,29 +45,40 @@ export const Products = () => {
   return (
     <div className='mt-5'>
       <Link to='/category' className='px-3 flex no-underline items-center justify-between text-black'>
-        <h1 className='font-bold ' >Top Products</h1>
+        <h3 className='' >Top Products</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/></Link>
       <Swiper className='pb-4'
       // install Swiper modules
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 3,
+          slidesPerView: 4,
+         
+        },
+        400: {
+          width: 400,
+          slidesPerView: 2,
+          navigation: { clickable: true }
         },
         768: {
           width: 768,
-          slidesPerView: 3,
+          slidesPerView: 4,
+          navigation: { clickable: true }
+        },
+        1024: {
+          width: 1024,
+          slidesPerView: 4,
+          navigation: { clickable: true }
         },
       }}
     
     
-      modules={[ Scrollbar, A11y]}
+      modules={[ Navigation, A11y,]}
       spaceBetween={50}
-      slidesPerView={2}
-      scrollbar={{ draggable: true }}
+      navigation= { {clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-    >
+      >
       {items.map((item, i) => {
         if(i < 20){
           return <SwiperSlide>  
@@ -95,7 +105,7 @@ export const Products = () => {
             </div>
             <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
              className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
-            <BsPatchPlus className='text-white' size={20}/>
+            <FaRegEye className='text-white' size={20}/>
            </Link>
           </div>
       </div>

@@ -8,18 +8,21 @@ import { Product } from './components/product/Product';
 import { Nav } from './components/nav/Nav';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Cart} from './components/cart/Cart';
 
 function App() {
 
   return (
-    <div  className="font-poppins">
-      <Nav/>
+    <div  className="font-poppins text-blacktext">
+      
     <Router>
+    <Nav/>
       <Routes>
       <Route exact path='/' element={<Home/>} />
       <Route  path='/category' element={<Categories/>} />
       <Route  path='/register' element={<Register/>} />
       <Route  path='/product/:id' element={<Product/>} />
+      <Route  path='/cart' element={<Cart/>} />
       </Routes>
     </Router>
     <Footer/>

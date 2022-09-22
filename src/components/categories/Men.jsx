@@ -13,6 +13,7 @@ import 'swiper/css';
 
 import 'swiper/css/scrollbar';
 import { getElec } from '../redux/items/eleSlice'
+import { FaEye, FaRegEye } from 'react-icons/fa'
 export const Men = () => {
   const dispatch = useDispatch()
   const {elec, isload} = useSelector((state) => state.elec)
@@ -40,18 +41,29 @@ export const Men = () => {
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 3,
+          slidesPerView: 4,
+         
+        },
+        400: {
+          width: 400,
+          slidesPerView: 2,
+          navigation: { clickable: true }
         },
         768: {
           width: 768,
-          slidesPerView: 3,
+          slidesPerView: 4,
+          navigation: { clickable: true }
+        },
+        1024: {
+          width: 1024,
+          slidesPerView: 4,
+          navigation: { clickable: true }
         },
       }}
     
     
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={2}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
@@ -83,7 +95,7 @@ export const Men = () => {
             </div>
             <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
              className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
-            <BsPatchPlus className='text-white' size={20}/>
+            <FaRegEye className='text-white' size={20}/>
            </Link>
           </div>
 
