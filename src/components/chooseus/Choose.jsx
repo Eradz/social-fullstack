@@ -21,10 +21,10 @@ export const Choose = () => {
           whileHover={{ scale: 1.08}}
           className="flex justify-start w-[70%] mx-[15%] items-center gap-2 shadow shadow-black p-3 rounded-[20px] bg-white">
           <div className={`${item.bg} rounded-[50%] w-12 h-12 relative`}>
-          <div  className='absolute top-[25%] left-[25%] text-[25px]'>{item.icon}</div>
+          <div  className='absolute top-[25%] left-[25%] text-[25px] text-white'>{item.icon}</div>
           </div>
           <div className="flex flex-col justify-center pt-3" >
-            <h6 className="mb-[-3px] font-semibold">{item.name}</h6>
+            <h6 className="mb-[-3px] font-[600]">{item.name}</h6>
             <p className="font-light text-[15px]">{item.detail}</p>
           </div>
           </motion.div>

@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'swiper/css';
 import 'swiper/css/pagination'
 import 'swiper/css/navigation';
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 
 
 export const Product = () => {
@@ -89,8 +90,17 @@ export const Product = () => {
             </div>
         </div>
         <div>
-          <h4 className='md:text-[26px]'>Description</h4>
-          <p className='md:text-[22px]'>{item.description}</p>
+          <h4 className='md:text-[26px] '>Description</h4>
+          <p className='md:text-[20px] font-thin'>{item.description}</p>
+          <div className='hidden items-center gap-3 md:flex'>
+                    <h5>Quantity</h5>
+                            <FaMinusCircle size={22}/>
+                            <div className='flex flex-col justify-center'>
+                                <h4 className='text-center text-text font-semibold mb-[-3px]'>1</h4>
+                                <div className='w-12 h-[1px] bg-black'></div>
+                            </div>
+                            <FaPlusCircle size={22}/>
+          </div>
         </div>
         <div className='flex justify-center gap-5'>
         <button className='px-3 py-2 text-blue border-blue border-2 cursor-pointer hover:text-black hover:bg-blue'>Checkout</button>

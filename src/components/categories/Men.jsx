@@ -40,18 +40,29 @@ export const Men = () => {
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 3,
+          slidesPerView: 4,
+         
+        },
+        400: {
+          width: 400,
+          slidesPerView: 2,
+          navigation: { clickable: true }
         },
         768: {
           width: 768,
-          slidesPerView: 3,
+          slidesPerView: 4,
+          navigation: { clickable: true }
+        },
+        1024: {
+          width: 1024,
+          slidesPerView: 4,
+          navigation: { clickable: true }
         },
       }}
     
     
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={2}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}

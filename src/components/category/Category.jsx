@@ -19,7 +19,7 @@ function Category() {
    
   return (
     <div className='flex justify-center items-center flex-col mt-5'>
-        <h1 className='font-bold mb-4'>All Categories</h1>
+        <h1 className='font-semibold mb-4'>All Categories</h1>
         <div className="grid md:grid-cols-3  gap-4">
            { categories.map((item) => {
            return <motion.div 
@@ -29,7 +29,7 @@ function Category() {
            whileHover={{ scale:1.07 }}
            key={item.id} className= {`${item.bg} shadow shadow-black w-[100%] flex justify-between pl-8 rounded-[50px]`} >
             <div className="my-auto">
-            <h5 className='font-semibold pl-2'>{item.name}</h5>
+            <h5 className='font-[580] pl-2'>{item.name}</h5>
             <button className='mt-2 px-3 py-2.5 rounded-[25px] bg-white' >{item.button}</button>
             </div>
             <img className='w-[200px] h-[200px]' src={item.img} alt={item.name}/>

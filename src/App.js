@@ -13,7 +13,7 @@ import {Cart} from './components/cart/Cart';
 function App() {
 
   return (
-    <div  className="font-poppins">
+    <div  className="font-poppins text-blacktext">
       
     <Router>
     <Nav/>

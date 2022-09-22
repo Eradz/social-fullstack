@@ -7,16 +7,14 @@ import watch from '../../assest/watch.png'
 
 export function Cart() {
     const {cartItem} = useSelector((state) => state.item)
-    console.log(cartItem)
     localStorage.setItem('cart', JSON.stringify(cartItem))
-    const item = JSON.parse(localStorage.getItem('cart')) 
-    console.log(item)
+    const items = JSON.parse(localStorage.getItem('cart')) 
   return (
     <div className='bg-bg'>
         <div>
-            <div className='flex gap-[40%] py-3 bg-white'>
+            <div className='relative md:flex  py-3 bg-white'>
                 <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer"/>
-                <h3 className='text-center font-semibold'>My Cart</h3>
+                <h3 className='right-[40%] md:right-[50%] top-5 font-semibold absolute'>My Cart</h3>
             </div>
             <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
             <div className='flex justify-between bg-white mt-[-10px] px-4 py-3 '>
@@ -28,19 +26,20 @@ export function Cart() {
             </div>
             <p className='text-text pl-6 font-semibold pt-2'>CART(2)</p>
             <div className='bg-bg flex flex-col gap-5'>
-                <div className='bg-white px-4 py-3' >
-                    <div className=' flex justify-between '>
+               {items.map((item) => {
+                return <div key={item.id} className='bg-white px-4 py-3' >
+                        <div className=' flex justify-between '>
                         <div className='flex gap-3'>
-                            <img src={watch} alt="watch" className='w-[150px] h-[200px]'/>
+                            <img src={item.thumbnail} alt="watch" className='w-[150px] md:h-[200px] h-[150px]'/>
                             <div className='pt-3 text-[14px]'>
-                                <h5 className='text-[14px]'>Fan</h5>
-                                <h6 className='text-[14px]'>MerchantOwen</h6>
-                                <p>tanding</p>
-                                <h4 className='font-semibold'>$9000</h4>
+                                <h5 className='text-[14px]'>{item.title}</h5>
+                                <h6 className='text-[14px]'>{item.brand}</h6>
+                                <p>{item.category}</p>
+                                <h4 className='font-semibold'>${item.price}</h4>
                                 <p className='text-text text-[12px]'>$15000</p>
                             </div>
                         </div>
-                        <div className='flex items-center gap-3 '>
+                        <div className='hidden items-center gap-3 md:flex'>
                             <FaMinusCircle size={22}/>
                             <div className='flex flex-col justify-center'>
                                 <h4 className='text-center text-text font-semibold mb-[-3px]'>1</h4>
@@ -54,6 +53,7 @@ export function Cart() {
                         <span>Remove</span>
                     </div>
                 </div>
+               })} 
             </div>
         </div>
     </div>

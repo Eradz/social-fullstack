@@ -16,7 +16,8 @@ module.exports = {
         bg:'rgba(249,249,249)',
         ft: 'rgb(41,45,50)',
         icon: 'rgb(62,66,69)',
-        text: 'rgb(148,150,152)'
+        text: 'rgb(148,150,152)',
+        subtext: 'rgb(75,85,99)'
       },
       boxShadow: {
         '3xl': '0 0 0px 0 rgba(255, 255, 255, 0.3)',
