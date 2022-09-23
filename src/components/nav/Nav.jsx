@@ -9,7 +9,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 
 export const Nav = () => {
-  const {cart} = useSelector((state) => state.item)
+  const {cartItem} = useSelector((state) => state.item)
   const menu =[
     {id: 1, name: 'Male wears', link: '#'},
     {id: 2, name: 'Female wears', link: '#'},
@@ -71,7 +71,7 @@ export const Nav = () => {
                 </Link>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
                     <Link to='/cart' className="text-black cursor-pointer"> <HiOutlineShoppingCart  size={25}/></Link>
-                     <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
+                     <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cartItem.length}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
                 {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
