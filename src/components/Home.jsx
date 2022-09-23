@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer  from './footer/Footer';
 import Category from './category/Category'
 import { Choose } from './chooseus/Choose'
 import Faq from './faq/Faq'
@@ -15,6 +16,7 @@ function Home() {
     <Choose/>
     <Products/>
     <Faq/>
+    <Footer/>
   </div>
   )
 }

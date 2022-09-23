@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Footer  from '../footer/Footer';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { IoMdArrowRoundBack } from 'react-icons/io'
@@ -75,6 +76,7 @@ export function Cart() {
 
                </div>
         </div>
+        <Footer/>
     </div>
   )
 }
