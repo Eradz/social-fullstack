@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Footer  from '../footer/Footer';
 import { AiFillHeart, AiFillStar } from 'react-icons/ai'
 import { BiArrowFromRight } from 'react-icons/bi'
 import { Link, useLocation } from 'react-router-dom'
@@ -124,6 +125,7 @@ export const Product = () => {
         </div>
     </div>
     </div>
+    <Footer/>
     </div>
   )
 }

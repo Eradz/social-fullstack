@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer  from '../footer/Footer';
 import { BiArrowFromRight, BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav/Nav'
@@ -22,6 +23,7 @@ export default function Categories() {
             <Women/>
             <Electronics/>
       </div>
+      <Footer/>
     </div>
   )
 }

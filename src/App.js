@@ -1,5 +1,4 @@
 import './App.css';
-import Footer  from './components/footer/Footer';
 import Home from './components/Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Categories from './components/categories/Categories';
@@ -22,7 +21,6 @@ function App() {
       <Route  path='/cart' element={<Cart/>} />
       </Routes>
     </Router>
-    <Footer/>
     <ToastContainer />
     </div>
   );
