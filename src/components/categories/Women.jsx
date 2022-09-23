@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
-import {BsPatchPlus} from 'react-icons/bs'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
