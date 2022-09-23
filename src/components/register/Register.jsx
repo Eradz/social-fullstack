@@ -38,7 +38,7 @@ export default function Register() {
       <div className="flex flex-col w-[90%] mx-auto ">
         <label for="agree" className='text-[13px] ' >
         <input type="checkbox" name="agree" />
-          <span className='ml-2'>I agree to the <Link className='text-blue cursor-pointer no-underline'>Terms and Conditions</Link> of Eradz co.</span>
+          <span className='ml-2'>I agree to the <Link to='/register' className='text-blue cursor-pointer no-underline'>Terms and Conditions</Link> of Eradz co.</span>
         </label>
       <button className='bg-blue py-2 w-[70%] mx-auto text-white font-semibold mt-2'>{signup?  <span>Sign Up</span>: <span>Login</span>}</button>
       </div>

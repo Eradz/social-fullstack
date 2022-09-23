@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from "react-router-dom";
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { IoMdArrowRoundBack } from 'react-icons/io'
@@ -6,6 +7,8 @@ import { useSelector,  } from 'react-redux'
 import watch from '../../assest/watch.png'
 
 export function Cart() {
+    const location = useParams()
+    console.log(location)
     const {cartItem} = useSelector((state) => state.item)
     localStorage.setItem('cart', JSON.stringify(cartItem))
     const items = JSON.parse(localStorage.getItem('cart')) 
