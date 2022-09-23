@@ -16,7 +16,7 @@ export function Cart() {
         <Nav/>
         <div>
             <div className='relative md:flex  py-3 bg-white'>
-               <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer"/></Link>
+               <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer text-black"/></Link>
                 <h3 className='right-[40%] md:right-[50%] top-5 font-semibold absolute'>My Cart</h3>
             </div>
             <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
