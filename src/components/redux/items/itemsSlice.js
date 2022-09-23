@@ -6,6 +6,7 @@ const initialState = {
     cart: 0,
     cartItem: [],
     isload: true,
+    amount:null,
     message: ''
 }
 

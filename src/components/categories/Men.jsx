@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
-import {BsPatchPlus} from 'react-icons/bs'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,7 +12,7 @@ import 'swiper/css';
 
 import 'swiper/css/scrollbar';
 import { getElec } from '../redux/items/eleSlice'
-import { FaEye, FaRegEye } from 'react-icons/fa'
+import { FaRegEye } from 'react-icons/fa'
 export const Men = () => {
   const dispatch = useDispatch()
   const {elec, isload} = useSelector((state) => state.elec)
@@ -53,7 +52,6 @@ export const Men = () => {
         768: {
           width: 768,
           slidesPerView: 3,
-          navigation: { clickable: true }
         },
         1024: {
           width: 1024,
