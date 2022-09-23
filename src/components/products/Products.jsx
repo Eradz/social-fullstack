@@ -51,15 +51,15 @@ export const Products = () => {
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 3,
+          slidesPerView: 2,
            },
         768: {
           width: 768,
           slidesPerView: 3,
            },
         1024: {
-          width: 576,
-          slidesPerView: 3,
+          width: 1024,
+          slidesPerView: 4,
           },
       }}
     
