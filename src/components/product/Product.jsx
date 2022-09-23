@@ -18,7 +18,6 @@ import { Nav } from '../nav/Nav';
 
 export const Product = () => {
   const location = useLocation()
-  console.log(location)
   const item = location.state.from
   const dispatch = useDispatch()
   const {cartItem, message} = useSelector((state) => state.item)
@@ -43,9 +42,9 @@ export const Product = () => {
     setAmount(prevamount => prevamount - 1  )
   }
    const multiply =  amount * item.price
-   console.log(multiply)
 
    const object = {...item, total: multiply, amount: amount}
+
   const push = ()=>{
    if(last === item){
     dispatch(addCart("nothing"))
@@ -118,7 +117,7 @@ export const Product = () => {
               </div>
           </div>
         </div>
-        <div className='flex justify-center gap-5 mt-2'>
+        <div className='flex justify-center gap-5 mt-4'>
         <Link to='/cart'><button className='px-3 py-2 text-blue border-blue border-2 cursor-pointer hover:text-black hover:bg-blue'>Checkout</button></Link>
         <button onClick={() => {push()}} className='px-3 py-2 bg-blue border-2 border-blue cursor-pointer hover:text-blue hover:bg-white'>Add to cart</button>
         </div>

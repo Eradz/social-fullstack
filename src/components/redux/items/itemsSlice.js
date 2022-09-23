@@ -3,10 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     items: [],
-    cart: 0,
     cartItem: [],
     isload: true,
-    amount:null,
     message: ''
 }
 
@@ -28,9 +26,11 @@ export const itemSlice = createSlice({
             } else if (action.payload){
             state.cart = state.cart + 1
             state.cartItem.push(action.payload)
-            }
-            
+            } 
         },
+        deleteCI: (state, action) => {
+            state.cartItem.splice(action.payload,1)
+        }
     }
     ,
     extraReducers: {
@@ -51,5 +51,5 @@ export const itemSlice = createSlice({
     }
 })
 
-export const { addCart} = itemSlice.actions
+export const { addCart, deleteCI} = itemSlice.actions
 export default itemSlice.reducer
