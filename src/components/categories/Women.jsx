@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsPatchPlus} from 'react-icons/bs'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
@@ -19,7 +19,12 @@ export const Women = () => {
   const {elec, isload} = useSelector((state) => state.elec)
 
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-  
+  const [on, setOn] = useState(false)
+  const toggle = (i)=>{
+      if(i >= 0 ){
+        setOn(!on)
+      }
+  }
   useEffect(() => {
     dispatch(getElec(""))
   }, [dispatch])
@@ -41,17 +46,12 @@ export const Women = () => {
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 4,
-         
-        },
-        400: {
-          width: 400,
           slidesPerView: 2,
-          navigation: { clickable: true }
+         
         },
         768: {
           width: 768,
-          slidesPerView: 4,
+          slidesPerView: 3,
           navigation: { clickable: true }
         },
         1024: {
@@ -64,6 +64,7 @@ export const Women = () => {
     
       modules={[ Scrollbar, A11y]}
       spaceBetween={50}
+      slidesPerView=  {2}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
@@ -75,7 +76,7 @@ export const Women = () => {
             <div className=' w-[180px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
-               <div className='bg-red-500 p-2 rounded-[50%]'>
+               <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                 <AiFillHeart color='white'/>
                </div>
               </div> 

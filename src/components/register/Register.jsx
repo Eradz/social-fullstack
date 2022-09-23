@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import {FaFacebook, FaTwitter} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 
 export default function Register() {
@@ -37,7 +38,7 @@ export default function Register() {
       <div className="flex flex-col w-[90%] mx-auto ">
         <label for="agree" className='text-[13px] ' >
         <input type="checkbox" name="agree" />
-          <span className='ml-2'>I agree to the <a className='text-blue cursor-pointer no-underline'>Terms and Conditions</a> of Eradz co.</span>
+          <span className='ml-2'>I agree to the <Link className='text-blue cursor-pointer no-underline'>Terms and Conditions</Link> of Eradz co.</span>
         </label>
       <button className='bg-blue py-2 w-[70%] mx-auto text-white font-semibold mt-2'>{signup?  <span>Sign Up</span>: <span>Login</span>}</button>
       </div>
