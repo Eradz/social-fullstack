@@ -1,13 +1,15 @@
 import React from 'react'
 import { BiArrowFromRight, BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { Nav } from '../nav/Nav'
 import { Electronics } from './Electronics'
 import { Men } from './Men'
 import { Women } from './Women'
 
 export default function Categories() {
   return (
-    <div>
+    <div> 
+       <Nav/>
       <div className='flex items-center justify-between pt-1'>
       <Link to='/' className='text-black'>
               <BiArrowFromRight size={25}/>

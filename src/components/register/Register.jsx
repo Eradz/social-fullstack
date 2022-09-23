@@ -3,6 +3,7 @@ import {FcGoogle} from 'react-icons/fc'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
 import {FaFacebook, FaTwitter} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { Nav } from '../nav/Nav'
 
 
 export default function Register() {
@@ -11,6 +12,8 @@ export default function Register() {
 
 
   return (
+    <div>
+      <Nav/>
     <div className='h-[100vh] py-9 md:w-[80%] mx-auto '>
       <div className='flex justify-center gap-4'>
         <h2 onClick={() => setSignup(true)} className={signup? 'cursor-pointer font-semibold text-blue': 'cursor-pointer font-semibold'}>Sign-up</h2>
@@ -56,6 +59,7 @@ export default function Register() {
       </div>
       </div>
       <span className='flex justify-center'>{signup? <span>Already Have An Account?<span onClick={() => setSignup(false)} className="text-blue cursor-pointer"> Sign in</span></span>: <span>Not a member? <span onClick={() => setSignup(true)} className="text-blue cursor-pointer">Sign up</span></span>}</span>
+    </div>
     </div>
   )
 }

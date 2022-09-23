@@ -5,7 +5,7 @@ import {IoIosArrowDropdown} from 'react-icons/io'
 import {BsSearch, BsStar, BsInfoCircle} from 'react-icons/bs'
 import {BiCategory} from 'react-icons/bi'
 import { useSelector} from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 export const Nav = () => {
@@ -46,17 +46,17 @@ export const Nav = () => {
                   <input className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories'/>
                   <BsSearch className='absolute top-2 left-3 ' />
                 </div>
-                  <button className='text-white border-4 bg-blue py-1 px-4 rounded-xl'>Search</button>
-              </div>
-        <div className='md:flex hidden ml-[-5rem] relative'> 
-            <ul className='flex justify-between items-center gap-4 mt-2 font-medium '>
-              <li className='hover:text-blue'><Link className='no-underline text-black'  to='/'>Home</Link></li>
+                  <button className='text-white border-4 bg-blue py-1 lg:px-4 md:px-2  rounded-xl'>Search</button>
+              </div>  
+        <div className='md:flex hidden ml-[-5rem] relative lg:text-[20px] md:text-[14px]'> 
+            <ul className='flex justify-between items-center md:gap-2 lg:gap-4 mt-2 font-medium '>
+              <li className='hover:text-blue'><NavLink className='no-underline text-black'  to='/'>Home</NavLink></li>
               <div onClick={toogles} className='relative flex justify-between items-center gap-1 hover:text-blue hover:cursor-pointer'>
-                  <li className='hover:text-blue'><Link className='no-underline text-black' to='/category'>Category</Link></li>
+                  <li className='hover:text-blue'><NavLink className='no-underline text-black' to='/category'>Category</NavLink></li>
                   <IoIosArrowDropdown className={!show?'rotate-180 duration-1000': 'duration-1000'}/>
               </div>
-              <li className=''><Link className='no-underline hover:text-blue text-black' to='/'>Promo</Link></li>
-              <li className='text-black'><Link className='no-underline  hover:text-blue ' to='/'>About us</Link></li>
+              <li className=''><NavLink className='no-underline hover:text-blue text-black' to='/'>Promo</NavLink></li>
+              <li className='text-black'><NavLink className='no-underline  hover:text-blue ' to='/'>About us</NavLink></li>
             </ul>
             <ul className={show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
               <li><Link className='text-black no-underline' to='#'>Men</Link></li>
@@ -74,7 +74,7 @@ export const Nav = () => {
                      <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
-                {nav? <FaTimes size={25}/> :  <FaBars size={25}/>}
+                {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
     </div>
