@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { AiFillHeart, AiFillStar } from 'react-icons/ai'
 import { BiArrowFromRight } from 'react-icons/bi'
 import { Link, useLocation } from 'react-router-dom'
@@ -15,6 +15,7 @@ import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 import { Nav } from '../nav/Nav';
 
 
+
 export const Product = () => {
   const location = useLocation()
   console.log(location)
@@ -22,7 +23,7 @@ export const Product = () => {
   const dispatch = useDispatch()
   const {cartItem, message} = useSelector((state) => state.item)
   const last = cartItem[cartItem.length - 1]
-
+  const [amount, setAmount] = useState(1)
   
 
   const stars = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
@@ -35,17 +36,23 @@ export const Product = () => {
   const toggle = ()=>{
           setOn(!on)
   }
- 
+  const addAmount = () => {
+    setAmount(prevamount => prevamount + 1 )
+  }
+  const minusAmount = () => {
+    setAmount(prevamount => prevamount - 1  )
+  }
+   const multiply =  amount * item.price
+   console.log(multiply)
 
-
-
+   const object = {...item, total: multiply, amount: amount}
   const push = ()=>{
    if(last === item){
     dispatch(addCart("nothing"))
     toast(message)
 
    }else{
-    dispatch(addCart(item))
+    dispatch(addCart(object))
     toast(`${item.title} has been added to cart`)
    }
   }
@@ -102,17 +109,17 @@ export const Product = () => {
           <div className=' items-start gap-3 flex mt-3'>
               <h5>Quantity:</h5>
               <div className=' flex justify-start gap-3 items-start'>
-              <FaMinusCircle size={22} className="cursor-pointer"/>
+              <FaMinusCircle onClick={() => {minusAmount()}}  size={22} className="cursor-pointer"/>
               <div className='flex flex-col justify-center'>
-              <h4 className='text-center text-text font-semibold mb-[-3px]'>1</h4>
+              <h4 className='text-center text-text font-semibold mb-[-3px]'>{amount < 0 ? 0 : amount}</h4>
               <div className='w-12 h-[1px] bg-black hidden md:block'></div>
               </div>
-              <FaPlusCircle size={22} className="cursor-pointer"/>
+              <FaPlusCircle onClick={() => {addAmount()}}  size={22} className="cursor-pointer"/>
               </div>
           </div>
         </div>
         <div className='flex justify-center gap-5 mt-2'>
-        <button className='px-3 py-2 text-blue border-blue border-2 cursor-pointer hover:text-black hover:bg-blue'>Checkout</button>
+        <Link to='/cart'><button className='px-3 py-2 text-blue border-blue border-2 cursor-pointer hover:text-black hover:bg-blue'>Checkout</button></Link>
         <button onClick={() => {push()}} className='px-3 py-2 bg-blue border-2 border-blue cursor-pointer hover:text-blue hover:bg-white'>Add to cart</button>
         </div>
         </div>

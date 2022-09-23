@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import { useSelector,  } from 'react-redux'
 import { Nav } from '../nav/Nav';
+import { Link } from 'react-router-dom'
 
 export function Cart() {
     const {cartItem, cart} = useSelector((state) => state.item)
     localStorage.setItem('cart', JSON.stringify(cartItem))
     const items = JSON.parse(localStorage.getItem('cart')) 
 
-    const quantity = 2
-
   return (
     <div className='bg-bg'>
         <Nav/>
         <div>
             <div className='relative md:flex  py-3 bg-white'>
-                <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer"/>
+               <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer"/></Link>
                 <h3 className='right-[40%] md:right-[50%] top-5 font-semibold absolute'>My Cart</h3>
             </div>
             <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
@@ -39,14 +38,14 @@ export function Cart() {
                                 <h5 className='text-[14px]'>{item.title}</h5>
                                 <h6 className='text-[14px]'>{item.brand}</h6>
                                 <p>{item.category}</p>
-                                <h4 className='font-semibold'>${item.price}</h4>
-                                <p className='text-text text-[12px]'>$15000</p>
+                                <h4 className='font-semibold'>${item.total}</h4>
+                                <p className='text-text text-[12px]'>${item.price}</p>
                             </div>
                         </div>
                         <div className='flex flex-col-reverse justify-center gap-3 md:flex-row items-center'>
                             <FaMinusCircle size={22} className="cursor-pointer"/>
                             <div className='flex flex-col justify-center'>
-                                <h4 className='text-center text-text font-semibold mb-[-3px]'>{quantity}</h4>
+                                <h4 className='text-center text-text font-semibold mb-[-3px]'>{item.amount}</h4>
                                 <div className='w-12 h-[1px] bg-black hidden md:block'></div>
                             </div>
                             <FaPlusCircle size={22} className="cursor-pointer"/>
