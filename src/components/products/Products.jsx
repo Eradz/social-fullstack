@@ -12,7 +12,6 @@ import {Link} from 'react-router-dom'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { FaRegEye } from 'react-icons/fa'
 export const Products = () => {
   const dispatch = useDispatch()
   const {items, isload} = useSelector((state) => state.item)
@@ -52,30 +51,23 @@ export const Products = () => {
       breakpoints={{
         576: {
           width: 576,
-          slidesPerView: 4,
-         
-        },
-        400: {
-          width: 400,
-          slidesPerView: 2,
-          navigation: { clickable: true }
-        },
+          slidesPerView: 3,
+           },
         768: {
           width: 768,
-          slidesPerView: 4,
-          navigation: { clickable: true }
-        },
+          slidesPerView: 3,
+           },
         1024: {
-          width: 1024,
-          slidesPerView: 4,
-          navigation: { clickable: true }
-        },
+          width: 576,
+          slidesPerView: 3,
+          },
       }}
     
     
       modules={[ Navigation, A11y,]}
       spaceBetween={50}
-      navigation= { {clickable: true }}
+      slidesPerView={2}
+      navigation={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       >
@@ -105,7 +97,7 @@ export const Products = () => {
             </div>
             <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
              className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
-            <FaRegEye className='text-white' size={20}/>
+            <BsPatchPlus className='text-white' size={20}/>
            </Link>
           </div>
       </div>
