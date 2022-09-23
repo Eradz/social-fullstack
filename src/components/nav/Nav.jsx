@@ -74,7 +74,7 @@ export const Nav = () => {
                      <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cart}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
-                {nav? <FaTimes size={25}/> :  <FaBars size={25}/>}
+                {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
     </div>
