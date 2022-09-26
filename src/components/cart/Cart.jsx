@@ -17,8 +17,6 @@ export function Cart() {
        return  total + stuff.total
     }, 0)
     console.log(subtotal)
-
-    const avalible = ''
   return (
     <div className='bg-bg relative'>
         <Nav/>
@@ -51,12 +49,10 @@ export function Cart() {
                             </div>
                         </div>
                         <div className='flex flex-col-reverse justify-center gap-3 md:flex-row items-center'>
-                            <FaMinusCircle size={22} className="cursor-pointer"/>
                             <div className='flex flex-col justify-center'>
                                 <h4 className='text-center text-text font-semibold mb-[-3px]'>{item.amount}</h4>
                                 <div className='w-12 h-[1px] bg-black hidden md:block'></div>
                             </div>
-                            <FaPlusCircle size={22} className="cursor-pointer"/>
                         </div>
                     </div>
                     <div onClick={() => {dispatch(deleteCI(i))}} className="text-red-500 flex gap-3 items-center cursor-pointer pt-2">
