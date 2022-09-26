@@ -16,7 +16,7 @@ export default function Categories() {
               <BiArrowFromRight size={25}/>
         </Link>
         <h3 className='text-center font-semibold'>Product Catogories</h3>
-        <BiMenu size={25}/>
+        <BiMenu size={25} className="invisible"/>
       </div>
       <div>
             <Men/>
