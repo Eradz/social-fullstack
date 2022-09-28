@@ -11,8 +11,8 @@ import { Link, NavLink } from 'react-router-dom'
 export const Nav = () => {
   const {cartItem} = useSelector((state) => state.item)
   const menu =[
-    {id: 1, name: 'Male wears', link: '#'},
-    {id: 2, name: 'Female wears', link: '#'},
+    {id: 1, name: 'Male wears', link: '/men'},
+    {id: 2, name: 'Female wears', link: '/women'},
     {id: 3, name: 'Wrist-watches and Jeweries', link: '#'},
     {id: 4, name: 'Electronics and computers', link: '#'},
     {id: 5, name: 'Furniture', link: '#'},
