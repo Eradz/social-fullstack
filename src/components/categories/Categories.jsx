@@ -4,7 +4,7 @@ import { BiArrowFromRight, BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav/Nav'
 import { Electronics } from './Electronics'
-import { Men } from './Men'
+import { Men } from './Men/Men'
 import { Women } from './Women'
 
 export default function Categories() {

@@ -6,12 +6,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Scrollbar, A11y } from 'swiper';
 import {Link} from 'react-router-dom'
-
 // Import Swiper styles
 import 'swiper/css';
 
 import 'swiper/css/scrollbar';
-import { getElec } from '../redux/items/eleSlice'
+import { getElec } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
 export const Men = () => {
   const dispatch = useDispatch()
@@ -108,3 +107,4 @@ export const Men = () => {
     </div>
   )
 }
+

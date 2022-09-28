@@ -9,14 +9,14 @@ import { motion } from "framer-motion"
 import {Link} from 'react-router-dom'
 
 function Category() {
-    const categories = [
+  const categories = [
         {id:1, name: 'Wrist-watches', button: 'View items', img: watch, bg:'bg-cyan-400' },
         {id:2, name: 'Furnitures', button: 'View items', img: couch, bg: 'bg-green-300'},
         {id:3, name: 'Jewelry', button: 'View items', img: jewelry, bg: 'bg-purple-400'},
         {id:4, name: 'Electronics', button: 'View items', img: tv, bg: 'bg-orange-300'},
         {id:5, name: 'Male wears', button: 'View items', img: men, bg:'bg-orange-400' },
         {id:6, name: 'Female wears', button: 'View items', img: woman, bg: 'bg-gray-400'},
-    ]
+  ]
     
    
   return (
