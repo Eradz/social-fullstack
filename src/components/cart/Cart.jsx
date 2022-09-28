@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Footer  from '../footer/Footer';
 import { RiDeleteBin2Line } from 'react-icons/ri'
-import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import { useSelector, useDispatch } from 'react-redux'
 import { Nav } from '../nav/Nav';
@@ -9,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { deleteCI } from '../redux/items/itemsSlice'
 export function Cart() {
     const dispatch = useDispatch()
-    const {cartItem, cart} = useSelector((state) => state.item)
+    const {cartItem} = useSelector((state) => state.item)
     localStorage.setItem('cart', JSON.stringify(cartItem))
     const items = JSON.parse(localStorage.getItem('cart')) 
 
@@ -24,14 +23,6 @@ export function Cart() {
             <div className='relative md:flex  py-3 bg-white'>
                <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer text-black"/></Link>
                 <h3 className='right-[40%] md:right-[50%] top-5 font-semibold absolute'>My Cart</h3>
-            </div>
-            <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
-            <div className='flex justify-between bg-white mt-[-10px] px-4 py-3 '>
-                <div>
-                    <h4 className='font-semibold'>Subtotal</h4>
-                    <p className='text-text text-[12px]'>Delivery fees not included yet</p>
-                </div>
-                <h4 className='font-semibold'>${subtotal}</h4>
             </div>
             <p className='text-text pl-6 font-semibold pt-2'>CART({items.length})</p>
             <div className='bg-bg flex flex-col gap-5'>
@@ -62,9 +53,17 @@ export function Cart() {
                 </div>
                }): 
                <div>
-                <h1 className="text-uppercase text-center"> your cart is empty </h1> 
+                <h1 className="text-uppercase text-center"> Your cart is empty </h1> 
                <p className=" text-center" >Please add some items to cart before you checkout</p>
                </div>}
+            </div>
+            <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
+            <div className='flex justify-between bg-white mt-[-10px] px-4 py-3 '>
+                <div>
+                    <h4 className='font-semibold'>Sub-Total</h4>
+                    <p className='text-text text-[12px]'>Delivery fees not included yet</p>
+                </div>
+                <h4 className='font-semibold'>${subtotal}</h4>
             </div>
         </div>
         <div className='hidden w-[100vw] h-[230vh] absolute top-0 left-0 bg-dim flex justify-center items-center'>
