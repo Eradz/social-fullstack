@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import watch from '../../assest/watch.png'
 import jewelry from '../../assest/jewelry.png'
 import tv from '../../assest/tvs.png'

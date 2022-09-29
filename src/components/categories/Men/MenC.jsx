@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {IoIosArrowDropdown} from 'react-icons/io'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { getElec, fav } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
+import { Nav } from '../../nav/Nav'
 
 
 
@@ -16,7 +16,7 @@ export const MenC = () => {
     const toggle = (a,i) => {
         console.log(a,i)
     }
-    console.log(yeah)
+    
     useEffect(() => {
         dispatch(getElec("") )
     }, [dispatch,])
@@ -28,6 +28,8 @@ export const MenC = () => {
         )
     }
     return (
+      <>
+      <Nav/>
     <div className='mt-2'>
         <div className='px-3 flex '>
           <h3 className='font-bold text-center' >Men</h3>
@@ -70,6 +72,7 @@ export const MenC = () => {
   </div>
      
       </div>
+      </>
   
     )
   }

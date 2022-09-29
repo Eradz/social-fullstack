@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import Footer  from '../footer/Footer';
+import React, {useState} from 'react'
 import { AiFillHeart, AiFillStar } from 'react-icons/ai'
 import { BiArrowFromRight } from 'react-icons/bi'
 import { Link, useLocation } from 'react-router-dom'
@@ -49,7 +48,7 @@ export const Product = () => {
    })
 
   const push = ()=>{
-    if(last == undefined){
+    if(last === undefined){
       dispatch(addCart(object))
       toast(`${item.title} has been added to cart`)
       console.log(last, item)
@@ -62,7 +61,7 @@ export const Product = () => {
   return (
     <div className='h-[100vh] flex flex-col gap-4 '>
       <Nav/>
-    <div className='p-3 bg-bg' >
+    <div className='p-3 bg-bg -mt-4' >
           <div className='flex justify-between '>
               <Link to='/category' className='text-black'>
               <BiArrowFromRight size={25}/>
