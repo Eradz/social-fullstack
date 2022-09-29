@@ -22,7 +22,6 @@ export const Product = () => {
   const item = location.state.from
   const dispatch = useDispatch()
   const {cartItem, message} = useSelector((state) => state.item)
-  const last = cartItem[cartItem.length - 1]
   const [amount, setAmount] = useState(1)
   
 
@@ -45,16 +44,20 @@ export const Product = () => {
    const multiply =  amount * item.price
 
    const object = {...item, total: multiply, amount: amount}
+   const last = cartItem.find((item) =>{
+      return item.title === object.title
+   })
 
   const push = ()=>{
-   if(last === item){
-    dispatch(addCart("nothing"))
-    toast(message)
-
-   }else{
-    dispatch(addCart(object))
-    toast(`${item.title} has been added to cart`)
+    if(last == undefined){
+      dispatch(addCart(object))
+      toast(`${item.title} has been added to cart`)
+      console.log(last, item)
    }
+    else if(cartItem.length > 0 && last.title === item.title){
+      dispatch(addCart("nothing"))
+      toast(message)
+    } 
   }
   return (
     <div className='h-[100vh] flex flex-col gap-4 '>

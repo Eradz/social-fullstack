@@ -1,27 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { getElec } from '../../redux/items/eleSlice'
+import { getElec, fav } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
+
 
 
 export const MenC = () => {
     const dispatch = useDispatch()
     const {elec, isload} = useSelector((state) => state.elec)
-
+    const [yeah, setYeah] = useState(...elec)
     const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-    const [on, setOn] = useState(false)
-    const toggle = (i)=>{
-        if(i >= 0 ){
-            setOn(!on)
-        }
+    const toggle = (a,i) => {
+        console.log(a,i)
     }
+    console.log(yeah)
     useEffect(() => {
-        dispatch(getElec(""))
-    }, [dispatch])
+        dispatch(getElec("") )
+    }, [dispatch,])
     if (isload){
         return(
         <div>
@@ -42,11 +40,11 @@ export const MenC = () => {
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                 <div className='flex items-center justify-between bg-white px-2'>
                  <h2>...</h2> 
-                 <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
+                 <div onClick={() =>toggle(yeah, i)} className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                   <AiFillHeart color='white'/>
                  </div>
                 </div> 
-                <img src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+                <img onClick={() =>{dispatch(fav(i, ))}} src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
               </div>
               <div className='p-2 h-[30%] flex '>
               <div>
