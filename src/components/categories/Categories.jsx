@@ -3,9 +3,9 @@ import Footer  from '../footer/Footer';
 import { BiArrowFromRight, BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav/Nav'
-import { Electronics } from './Electronics'
+import { Electronics } from './Electronics/Electronics'
 import { Men } from './Men/Men'
-import { Women } from './Women'
+import { Women } from './Women/Women'
 
 export default function Categories() {
   return (

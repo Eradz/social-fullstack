@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
     elec: [],
     isload: true,
+    heart: [],
     message: ''
 }
 export const getElec = createAsyncThunk(
@@ -16,6 +17,14 @@ localStorage.setItem('dummyjson', getElec)
 export const elecSlice = createSlice({
     name: 'items',
     initialState,
+    reducers: {
+        fav: (state, action) => {
+            state.heart = [ state.elec[action.payload].on = true  ]
+        },
+        notFave: (state, action) => {
+            state.heart = [ state.elec[action.payload].on = false  ]
+        }
+    },
     extraReducers: {
         [getElec.pending] : (state) => {
             state.elec = []; 
@@ -33,5 +42,5 @@ export const elecSlice = createSlice({
     }
 })
 
-
+export const { fav, notFave } = elecSlice.actions
 export default elecSlice.reducer

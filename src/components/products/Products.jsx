@@ -3,6 +3,7 @@ import {IoIosArrowDropdown} from 'react-icons/io'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { getItems } from '../redux/items/itemsSlice'
 import { useEffect } from 'react'
+import {  fav, notFave } from '../redux/items/eleSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Navigation, A11y } from 'swiper';
@@ -24,11 +25,14 @@ export const Products = () => {
     return <span className='text-orange-500'>{star}</span>
 })
   const [on, setOn] = useState(false)
-  const toggle = (i)=>{
-      if(i >= 0 ){
-        setOn(!on)
-      }
-  }
+  const toggle = (i) => {
+    if(items[i].on){
+     dispatch(notFave(i))
+    }else{
+     dispatch(fav(i))
+    }
+   
+ }
   localStorage.setItem('items', JSON.stringify(items))
   useEffect(() => {
     dispatch(getItems(""))
@@ -78,7 +82,7 @@ export const Products = () => {
             <div className=' w-[200px] md:w-[250px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
-               <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
+               <div onClick={() =>{dispatch(toggle(i))}}  className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                 <AiFillHeart color='white'/>
                </div>
               </div> 

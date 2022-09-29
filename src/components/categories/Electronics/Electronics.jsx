@@ -1,45 +1,46 @@
-import React , {useState} from 'react'
-import {IoIosArrowDropdown} from 'react-icons/io'
-import {BsPatchPlus} from 'react-icons/bs'
+import React, { useEffect} from 'react'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import {Link} from 'react-router-dom'
+import { getElec, fav, notFave } from '../../redux/items/eleSlice'
+import { FaRegEye } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Scrollbar, A11y } from 'swiper';
-import {Link} from 'react-router-dom'
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import { getElec } from '../redux/items/eleSlice'
-import { FaRegEye } from 'react-icons/fa'
+import { IoIosArrowDropdown } from 'react-icons/io'
 export const Electronics = () => {
-  const dispatch = useDispatch()
-  const {elec, isload} = useSelector((state) => state.elec)
-
-  const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-  const [on, setOn] = useState(false)
-  const toggle = (i)=>{
-      if(i >= 0 ){
-        setOn(!on)
-      }
-  }
-  useEffect(() => {
-    dispatch(getElec(""))
-  }, [dispatch])
-  if (isload){
-    return(
-      <div>
-        <h1>loading ....</h1>
-        </div>
-    )
-  }
+    const dispatch = useDispatch()
+    const {elec, isload} = useSelector((state) => state.elec)
+    const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
+    const toggle = (i) => {
+       if(elec[i].on){
+        dispatch(notFave(i))
+       }else{
+        dispatch(fav(i))
+       }
+      
+    }
+    
+    useEffect(() => {
+        dispatch(getElec("") )
+    }, [dispatch,])
+    if (isload){
+        return(
+        <div>
+            <h1>loading ....</h1>
+            </div>
+        )
+    }
   return (
     <div className='mt-5'>
+      <Link to='/men' className='no-underline text-black font-light'> 
       <div className='px-3 flex items-center justify-between'>
         <h3 className='font-bold' >Electronics</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
+      </Link>
       <Swiper className='pb-4'
       // install Swiper modules
       breakpoints={{
@@ -51,7 +52,6 @@ export const Electronics = () => {
         768: {
           width: 768,
           slidesPerView: 3,
-          navigation: { clickable: true }
         },
         1024: {
           width: 1024,
@@ -69,13 +69,13 @@ export const Electronics = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {elec.map((item, i) => {
-        if(i < 10)
-        return <SwiperSlide>  
-      <div key={item.id} className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+         if(i < 10){
+        return <SwiperSlide key={item.title} >  
+      <div className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[180px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
               <div className='flex items-center justify-between bg-white px-2'>
                <h2>...</h2> 
-               <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
+               <div onClick={() =>{dispatch(toggle(i))}}  className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                 <AiFillHeart color='white'/>
                </div>
               </div> 
@@ -100,7 +100,7 @@ export const Electronics = () => {
           </div>
 
       </div>
-      </SwiperSlide>
+      </SwiperSlide>}
       })}
 
     </Swiper>
@@ -108,3 +108,4 @@ export const Electronics = () => {
     </div>
   )
 }
+

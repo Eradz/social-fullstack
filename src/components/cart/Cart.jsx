@@ -24,6 +24,14 @@ export function Cart() {
                <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer text-black"/></Link>
                 <h3 className='right-[40%] md:right-[50%] top-5 font-semibold absolute'>My Cart</h3>
             </div>
+            <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
+            <div className='flex justify-between bg-white mt-[-10px] px-4 py-3 '>
+                <div>
+                    <h4 className='font-semibold'>Sub-Total</h4>
+                    <p className='text-text text-[12px]'>Delivery fees not included yet</p>
+                </div>
+                <h4 className='font-semibold'>${subtotal}</h4>
+            </div>
             <p className='text-text pl-6 font-semibold pt-2'>CART({items.length})</p>
             <div className='bg-bg flex flex-col gap-5'>
               { cartItem.length > 0 ?  items.map((item, i) => {
@@ -57,14 +65,7 @@ export function Cart() {
                <p className=" text-center" >Please add some items to cart before you checkout</p>
                </div>}
             </div>
-            <p className='pt-2 pl-6 font-semibold text-text'>My Cart summary</p>
-            <div className='flex justify-between bg-white mt-[-10px] px-4 py-3 '>
-                <div>
-                    <h4 className='font-semibold'>Sub-Total</h4>
-                    <p className='text-text text-[12px]'>Delivery fees not included yet</p>
-                </div>
-                <h4 className='font-semibold'>${subtotal}</h4>
-            </div>
+            
         </div>
         <div className='hidden w-[100vw] h-[230vh] absolute top-0 left-0 bg-dim flex justify-center items-center'>
                <div className='w-[80%] h-[300px] absolute top-[10%] left-auto bg-bg'>

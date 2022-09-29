@@ -6,7 +6,7 @@ export const Choose = () => {
 
   const choice = [
     {name: "Free Shipping", detail:"Free on all orders over $50", icon: <BsBox/>, bg:'bg-blue' },
-    {name: "Money Quarantee", detail:"30 Days Money Back", icon: <FaRegMoneyBillAlt/>, bg:'bg-green-700' },
+    {name: "Money Guarantee", detail:"30 Days Money Back", icon: <FaRegMoneyBillAlt/>, bg:'bg-green-700' },
     {name: "24/7 Support", detail:"Friendly support 24/7", icon: <BsChatLeftText/>, bg:'bg-purple-700'}
   ]
   return (

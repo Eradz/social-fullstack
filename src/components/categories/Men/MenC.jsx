@@ -1,27 +1,29 @@
-import React, {useState} from 'react'
-import {IoIosArrowDropdown} from 'react-icons/io'
+import React, { useEffect} from 'react'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
-import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { getElec } from '../../redux/items/eleSlice'
+import { getElec, fav, notFave } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
+import { Nav } from '../../nav/Nav'
+
 
 
 export const MenC = () => {
     const dispatch = useDispatch()
     const {elec, isload} = useSelector((state) => state.elec)
-
     const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-    const [on, setOn] = useState(false)
-    const toggle = (i)=>{
-        if(i >= 0 ){
-            setOn(!on)
-        }
+    const toggle = (i) => {
+       if(elec[i].on){
+        dispatch(notFave(i))
+       }else{
+        dispatch(fav(i))
+       }
+      
     }
+    
     useEffect(() => {
-        dispatch(getElec(""))
-    }, [dispatch])
+        dispatch(getElec("") )
+    }, [dispatch,])
     if (isload){
         return(
         <div>
@@ -30,6 +32,8 @@ export const MenC = () => {
         )
     }
     return (
+      <>
+      <Nav/>
     <div className='mt-2'>
         <div className='px-3 flex '>
           <h3 className='font-bold text-center' >Men</h3>
@@ -42,7 +46,7 @@ export const MenC = () => {
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                 <div className='flex items-center justify-between bg-white px-2'>
                  <h2>...</h2> 
-                 <div onClick={() =>toggle(i)} className={on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
+                 <div onClick={() =>{dispatch(toggle(i))}}  className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                   <AiFillHeart color='white'/>
                  </div>
                 </div> 
@@ -72,6 +76,7 @@ export const MenC = () => {
   </div>
      
       </div>
+      </>
   
     )
   }
