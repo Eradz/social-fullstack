@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState = {
     elec: [],
     isload: true,
-    yeah: [],
+    heart: [],
     message: ''
 }
 export const getElec = createAsyncThunk(
@@ -19,10 +19,10 @@ export const elecSlice = createSlice({
     initialState,
     reducers: {
         fav: (state, action) => {
-            state.yeah = [ state.elec[action.payload].on = true  ]
+            state.heart = [ state.elec[action.payload].on = true  ]
         },
         notFave: (state, action) => {
-            state.yeah = [ state.elec[action.payload].on = false  ]
+            state.heart = [ state.elec[action.payload].on = false  ]
         }
     },
     extraReducers: {

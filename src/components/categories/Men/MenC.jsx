@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useEffect} from 'react'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import { getElec, fav } from '../../redux/items/eleSlice'
+import { getElec, fav, notFave } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
 import { Nav } from '../../nav/Nav'
 
@@ -11,10 +11,14 @@ import { Nav } from '../../nav/Nav'
 export const MenC = () => {
     const dispatch = useDispatch()
     const {elec, isload} = useSelector((state) => state.elec)
-    const [yeah, setYeah] = useState(...elec)
     const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
-    const toggle = (a,i) => {
-        console.log(a,i)
+    const toggle = (i) => {
+       if(elec[i].on){
+        dispatch(notFave(i))
+       }else{
+        dispatch(fav(i))
+       }
+      
     }
     
     useEffect(() => {
@@ -42,11 +46,11 @@ export const MenC = () => {
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                 <div className='flex items-center justify-between bg-white px-2'>
                  <h2>...</h2> 
-                 <div onClick={() =>toggle(yeah, i)} className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
+                 <div onClick={() =>{dispatch(toggle(i))}}  className={item.on? `bg-red-500 p-2 rounded-[50%] cursor-pointer`: `bg-icon p-2 rounded-[50%] cursor-pointer`}>
                   <AiFillHeart color='white'/>
                  </div>
                 </div> 
-                <img onClick={() =>{dispatch(fav(i, ))}} src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+                <img src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
               </div>
               <div className='p-2 h-[30%] flex '>
               <div>
