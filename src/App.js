@@ -10,6 +10,8 @@ import {Cart} from './components/cart/Cart';
 import { MenC } from './components/categories/Men/MenC';
 import { WomenC } from './components/categories/Women/WomenC';
 import { ElectronicsC } from './components/categories/Electronics/ElectronicsC';
+import { FurnitureC } from './components/categories/Furniture/FurnitureC';
+import { WatchesC } from './components/categories/Watches/WatchesC';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
       <Route  path='/men' element={<MenC/>} />
       <Route  path='/women' element={<WomenC/>} />
       <Route  path='/electronics' element={<ElectronicsC/>} />
+      <Route  path='/Furniture' element={<FurnitureC/>} />
+      <Route  path='/watches' element={<WatchesC/>} />
       </Routes>
     </Router>
     <ToastContainer />

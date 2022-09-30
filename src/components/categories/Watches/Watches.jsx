@@ -10,7 +10,7 @@ import {  Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { IoIosArrowDropdown } from 'react-icons/io'
-export const Furniture = () => {
+export const Watches = () => {
     const dispatch = useDispatch()
     const {elec, isload} = useSelector((state) => state.elec)
     const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
@@ -35,9 +35,9 @@ export const Furniture = () => {
     }
   return (
     <div className='mt-5'>
-      <Link to='/furniture' className='no-underline text-black font-light'> 
+      <Link to='/watches' className='no-underline text-black font-light'> 
       <div className='px-3 flex items-center justify-between'>
-        <h3 className='font-bold' >Furnitures</h3>
+        <h3 className='font-bold' >Watches</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
       </div>
       </Link>
@@ -69,7 +69,7 @@ export const Furniture = () => {
       onSlideChange={() => console.log('slide change')}
     >
       {elec.map((item, i) => {
-         if(i > 25 && i < 35 || i > 94){
+         if(i > 59 && i < 70 ){
         return <SwiperSlide key={item.title} >  
       <div className='rounded-lg w-max md:w-[250px] h-[300px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
             <div className=' w-[180px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
