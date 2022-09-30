@@ -8,7 +8,7 @@ import { Nav } from '../../nav/Nav'
 
 
 
-export const FurnitureC = () => {
+export const WatchesC = () => {
     const dispatch = useDispatch()
     const {elec, isload} = useSelector((state) => state.elec)
     const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
@@ -36,11 +36,11 @@ export const FurnitureC = () => {
       <Nav/>
     <div className='mt-2'>
         <div className='px-3 flex '>
-          <h3 className='font-bold text-center' >Furniture</h3>
+          <h3 className='font-bold text-center' >Watches</h3>
         </div>
        <div  className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 p-3 gap-y-5">
         {elec.map((item, i) => {
-          if (i > 25 && i < 35 || i > 94){
+          if (i > 59 && i < 70){
           return (
             <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 

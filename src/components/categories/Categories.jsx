@@ -3,9 +3,11 @@ import Footer  from '../footer/Footer';
 import { BiArrowFromRight, BiMenu } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { Nav } from '../nav/Nav'
-import { Electronics } from './Electronics/Electronics'
 import { Men } from './Men/Men'
 import { Women } from './Women/Women'
+import { Electronics } from './Electronics/Electronics'
+import { Furniture } from './Furniture/Furniture';
+import { Watches } from './Watches/Watches';
 
 export default function Categories() {
   return (
@@ -22,6 +24,8 @@ export default function Categories() {
             <Men/>
             <Women/>
             <Electronics/>
+            <Furniture/>
+            <Watches/>
       </div>
       <Footer/>
     </div>
