@@ -12,6 +12,7 @@ import { WomenC } from './components/categories/Women/WomenC';
 import { ElectronicsC } from './components/categories/Electronics/ElectronicsC';
 import { FurnitureC } from './components/categories/Furniture/FurnitureC';
 import { WatchesC } from './components/categories/Watches/WatchesC';
+import { JewelryC } from './components/categories/Jewelry/JewelryC';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       <Route  path='/electronics' element={<ElectronicsC/>} />
       <Route  path='/Furniture' element={<FurnitureC/>} />
       <Route  path='/watches' element={<WatchesC/>} />
+      <Route  path='/jewelry' element={<JewelryC/>} />
       </Routes>
     </Router>
     <ToastContainer />

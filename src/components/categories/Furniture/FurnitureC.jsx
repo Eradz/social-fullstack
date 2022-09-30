@@ -50,7 +50,9 @@ export const FurnitureC = () => {
                   <AiFillHeart color='white'/>
                  </div>
                 </div> 
+                <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}} className='text-black no-underline'>
                 <img src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+                </Link>
               </div>
               <div className='p-2 h-[30%] flex '>
               <div>
@@ -64,12 +66,14 @@ export const FurnitureC = () => {
                 })}
                 </div>
               </div>
-              <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
-               className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
+              <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}} className='text-black no-underline'>
+              <div className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg "> 
               <FaRegEye className='text-white' size={20}/>
-             </Link>
+              </div>
+              </Link>
             </div>
         </div>
+             
           )}
         })}
   
