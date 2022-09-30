@@ -79,7 +79,9 @@ export const Women = () => {
                 <AiFillHeart color='white'/>
                </div>
               </div> 
-              <img src={item.thumbnail} alt={item.title} className=' w-[180px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+              <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}} className='text-black no-underline'>
+                  <img src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+                  </Link>
             </div>
             <div className='p-2 h-[50%] flex '>
             <div>

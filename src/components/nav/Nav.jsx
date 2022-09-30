@@ -11,18 +11,22 @@ import { Link, NavLink } from 'react-router-dom'
 export const Nav = () => {
   const {cartItem} = useSelector((state) => state.item)
   const menu =[
-    {id: 1, name: 'Male wears', link: '/men'},
+    {id: 1, name: 'All products', link: '/category'},
+    {id: 7, name: 'Male wears', link: '/men'},
     {id: 2, name: 'Female wears', link: '/women'},
-    {id: 3, name: 'Wrist-watches and Jeweries', link: '#'},
-    {id: 4, name: 'Electronics and computers', link: '#'},
-    {id: 5, name: 'Furniture', link: '#'},
+    {id: 3, name: 'Wrist-watches', link: '/watches'},
+    {id: 6, name: 'Jeweries', link: '/jewelry'},
+    {id: 4, name: 'Electronics and computers', link: '/electronics'},
+    {id: 5, name: 'Furniture', link: '/furniture'},
   ]
 
   
   const category = menu.map((cate) => {
       return <div key={cate.id}>
-      <div  className='flex p-2 items-center gap-2'>
-        <Link className='no-underline text-black font-light' to={cate.link}>{cate.name}</Link></div>
+         <Link className='no-underline text-black font-light' to={cate.link}>
+      <div  className='flex p-2 items-center gap-2 hover:bg-blue'>
+       {cate.name}</div>
+       </Link>
       </div>
     })
   
@@ -52,18 +56,20 @@ export const Nav = () => {
             <ul className='flex justify-between items-center md:gap-2 lg:gap-4 mt-2 font-medium '>
               <li className='hover:text-blue'><NavLink className='no-underline text-black'  to='/'>Home</NavLink></li>
               <div onClick={toogles} className='relative flex justify-between items-center gap-1 hover:text-blue hover:cursor-pointer'>
-                  <li className='hover:text-blue'><NavLink className='no-underline text-black' to='/category'>Category</NavLink></li>
+                  <li className='hover:text-blue'>Category</li>
                   <IoIosArrowDropdown className={!show?'rotate-180 duration-1000': 'duration-1000'}/>
               </div>
               <li className=''><NavLink className='no-underline hover:text-blue text-black' to='/'>Promo</NavLink></li>
               <li className='text-black'><NavLink className='no-underline  hover:text-blue ' to='/'>About us</NavLink></li>
             </ul>
-            <ul className={show? 'flex flex-col absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
-              <li><Link className='text-black no-underline' to='#'>Men</Link></li>
-              <li><Link className='text-black no-underline' to='#'>Women</Link></li>
-              <li><Link className='text-black no-underline' to='#'>Watch and Jewelry</Link></li>
-              <li><Link className='text-black no-underline' to='#'>Furniture</Link></li>
-            </ul>
+            <div className={show? 'flex flex-col text-center gap-y-3 absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/category'>All products</Link>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/men'>Men</Link>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/women'>Women</Link>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/watch'>Watch</Link>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/jewelry'>Jewelry</Link>
+            <Link className='text-black no-underline hover:bg-blue py-2' to='/furniture'>Furniture</Link>
+            </div>
         </div>
              <div className='flex gap-3 items-center justify-center'>
               <Link to={{pathname: "/register"}} className='text-black'>
@@ -84,30 +90,31 @@ export const Nav = () => {
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
-    <div className=''>
-      <Link className='text-black no-underline font-light' to='/register'>
-              <div className="flex p-2 items-end justify-between">
+    <div className='flex flex-col gap-y-3 text-[21px]'>
+      <Link className='text-black no-underline font-light hover:bg-blue' to='/register'>
+              <div className="flex p-2 items-center justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>
                 <div><span className='text-black no-underline font-light' to='register'>My account</span></div>
                 </div>
-                <IoIosArrowDropdown size={20} className='-rotate-90'/>
+                <IoIosArrowDropdown size={22} className='-rotate-90'/>
               </div>
           </Link>
-              <div className=" flex p-2 items-end justify-between">
+              <div onClick={toogles}  className="cursor-pointer hover:bg-blue flex p-2 items-center justify-between">
                 <div className="flex items-center gap-2">
                 <BiCategory/>
-                <div><Link className='text-black no-underline font-light' to='/category'>Categories</Link></div>
+                <div >Categories</div>
                 </div>
-                <IoIosArrowDropdown onClick={toogles}  className={show? '-rotate-90 duration-1000 ease-linear cursor-pointer': 'cursor-pointer' } size={20}/>
+                <IoIosArrowDropdown   className={show? '-rotate-90 duration-1000 ease-linear cursor-pointer': 'cursor-pointer' } size={22}/>
               </div>
               <div className={!show? 'hidden duration-700 ease-in-out': 'duration-700 ease-in-out'}> 
                 {category}
               </div>
-              <div className="flex p-2 items-center gap-2">
+              <div className="flex p-2 items-center gap-2 hover:bg-blue">
                 <BsStar size={20}/>
-                <Link className='text-black no-underline font-light' to='#'>Promos</Link></div>
-              <div className=' flex items-center gap-2 p-2'>
+                <Link className='text-black no-underline font-light' to='#'>Promos</Link>
+              </div>
+              <div className=' flex items-center gap-2 p-2 hover:bg-blue'>
                 <BsInfoCircle/>
                 <Link className='text-black no-underline font-light' to='#'>About us</Link></div>
     </div>
