@@ -8,6 +8,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {Cart} from './components/cart/Cart';
 import { MenC } from './components/categories/Men/MenC';
+import { WomenC } from './components/categories/Women/WomenC';
+import { ElectronicsC } from './components/categories/Electronics/ElectronicsC';
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
       <Route  path='/product/:id' element={<Product/>} />
       <Route  path='/cart' element={<Cart/>} />
       <Route  path='/men' element={<MenC/>} />
+      <Route  path='/women' element={<WomenC/>} />
+      <Route  path='/electronics' element={<ElectronicsC/>} />
       </Routes>
     </Router>
     <ToastContainer />

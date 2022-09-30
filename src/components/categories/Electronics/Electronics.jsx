@@ -35,7 +35,7 @@ export const Electronics = () => {
     }
   return (
     <div className='mt-5'>
-      <Link to='/men' className='no-underline text-black font-light'> 
+      <Link to='/electronics' className='no-underline text-black font-light'> 
       <div className='px-3 flex items-center justify-between'>
         <h3 className='font-bold' >Electronics</h3>
         <IoIosArrowDropdown className='-rotate-90' size={25}/>
