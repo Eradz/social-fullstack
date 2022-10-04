@@ -43,7 +43,7 @@ export default function Register() {
         <input type="checkbox" name="agree" />
           <span className='ml-2'>I agree to the <Link to='/register' className='text-blue cursor-pointer no-underline'>Terms and Conditions</Link> of Eradz co.</span>
         </label>
-      <button className='bg-blue py-2 w-[70%] mx-auto text-white font-semibold mt-2'>{signup?  <span>Sign Up</span>: <span>Login</span>}</button>
+      <Link to='/category' className='flex justify-center w-[70%] mx-auto'><button className='bg-blue py-2 w-[100%] mx-auto text-white font-semibold mt-2'>{signup?  <span>Sign Up</span>: <span>Login</span>}</button></Link> 
       </div>
       <div className='mt-3 mb-5'>
       <div className="text-center text-black flex justify-center">
