@@ -13,12 +13,10 @@ function Category() {
         {id:5, name: 'Male wears', button: 'Shop now', img: men, bg:'bg-orange-400' , link:"/men"},
         {id:6, name: 'Female wears', button: 'Shop now', img: woman, bg: 'bg-gray-400' , link:"/women"},
         {id:4, name: 'Electronics', button: 'Shop now', img: tv, bg: 'bg-orange-300', link:"/electronics"},
-        {id:1, name: 'Watches', button: 'Shop now', img: watch, bg:'bg-cyan-400', link:"/men"},
-        {id:2, name: 'Furnitures', button: 'Shop now', img: couch, bg: 'bg-green-300', link:"/men"},
-        {id:3, name: 'Jewelry', button: 'Shop now', img: jewelry, bg: 'bg-purple-400', link:"/men"},
+        {id:1, name: 'Watches', button: 'Shop now', img: watch, bg:'bg-cyan-400', link:"/watches"},
+        {id:2, name: 'Furnitures', button: 'Shop now', img: couch, bg: 'bg-green-300', link:"/Furniture"},
+        {id:3, name: 'Jewelry', button: 'Shop now', img: jewelry, bg: 'bg-purple-400', link:"/jewelry"},
   ]
-    
-   
   return (
     <div className='flex justify-center items-center flex-col mt-5 '>
         <h1 className='font-semibold mb-4'>All Categories</h1>
