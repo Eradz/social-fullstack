@@ -21,15 +21,6 @@ export const Nav = () => {
   ]
 
   
-  const category = menu.map((cate) => {
-      return <div key={cate.id}>
-         <Link className='no-underline text-black font-light' to={cate.link}>
-      <div  className='flex p-2 items-center gap-2 hover:bg-blue'>
-       {cate.name}</div>
-       </Link>
-      </div>
-    })
-  
 
   const [nav, setNav] = useState(false)
   const [show, setShow] = useState(false)
@@ -40,6 +31,14 @@ export const Nav = () => {
   const toogles = () =>{
     setShow(!show)
   }
+  const category = menu.map((cate) => {
+    return <div key={cate.id} className="bg-gray-200">
+       <Link onClick={toogle} className='no-underline text-black font-light ' to={cate.link}>
+    <div  className='flex p-2 items-center gap-2 hover:bg-blue'>
+     {cate.name}</div>
+     </Link>
+    </div>
+  })
   return (
     <>
     <div className='z-30 bg-white sticky w-full top-0 left-0'>
@@ -91,7 +90,7 @@ export const Nav = () => {
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
     <h2 className='text-3xl font-bold p-3'> Eradz </h2>
     <div className='flex flex-col gap-y-3 text-[21px]'>
-      <Link className='text-black no-underline font-light hover:bg-blue' to='/register'>
+      <Link onClick={toogle} className='text-black no-underline font-light hover:bg-blue' to='/register'>
               <div className="flex p-2 items-center justify-between">
                 <div className="flex items-center gap-2">
                 <FaRegUser/>
@@ -105,7 +104,7 @@ export const Nav = () => {
                 <BiCategory/>
                 <div >Categories</div>
                 </div>
-                <IoIosArrowDropdown   className={show? '-rotate-90 duration-1000 ease-linear cursor-pointer': 'cursor-pointer' } size={22}/>
+                <IoIosArrowDropdown   className={show? 'duration-700 ease-linear cursor-pointer': 'duration-700 ease-linear -rotate-90 cursor-pointer' } size={22}/>
               </div>
               <div className={!show? 'hidden duration-700 ease-in-out': 'duration-700 ease-in-out'}> 
                 {category}

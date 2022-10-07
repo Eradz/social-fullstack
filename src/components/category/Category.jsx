@@ -23,7 +23,7 @@ function Category() {
         <div className="grid md:grid-cols-3  gap-4 px-3 ">
            { categories.map((item) => {
            return <motion.div 
-           transition={{duration: 0.8}}
+           transition={{duration: 0.6}}
            initial={{scale: 0, opacity: 0}}
            whileInView={{scale: 1, opacity: 1}}
            whileHover={{ scale:1.07 }}
