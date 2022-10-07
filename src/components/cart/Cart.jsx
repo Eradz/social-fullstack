@@ -3,7 +3,6 @@ import Footer  from '../footer/Footer';
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import { useSelector, useDispatch } from 'react-redux'
-import { Nav } from '../nav/Nav';
 import { Link } from 'react-router-dom'
 import { deleteCI } from '../redux/items/itemsSlice'
 export function Cart() {
@@ -18,7 +17,6 @@ export function Cart() {
     console.log(subtotal)
   return (
     <div className='bg-bg relative'>
-        <Nav/>
         <div>
             <div className='relative md:flex  py-3 bg-white'>
                <Link to='/category'> <IoMdArrowRoundBack size={31} className="ml-6 cursor-pointer text-black"/></Link>
