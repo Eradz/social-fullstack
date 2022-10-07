@@ -13,12 +13,14 @@ import { ElectronicsC } from './components/categories/Electronics/ElectronicsC';
 import { FurnitureC } from './components/categories/Furniture/FurnitureC';
 import { WatchesC } from './components/categories/Watches/WatchesC';
 import { JewelryC } from './components/categories/Jewelry/JewelryC';
+import { Nav } from './components/nav/Nav';
 
 function App() {
 
   return (
     <div  className="font-poppins text-blacktext">
     <Router>
+    <Nav/>
       <Routes>
       <Route exact path='/' element={<Home/>} />
       <Route  path='/category' element={<Categories/>} />

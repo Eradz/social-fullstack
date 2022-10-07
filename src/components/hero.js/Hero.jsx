@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import watch from '../../assest/couple-winter-cloths-studio.jpg'
-import first from '../../assest/woman.jpg'
+import first from '../../assest/womann.png'
 import woman from '../../assest/young-woman-casual-wear-posing-street.jpg'
 import Electronics from '../../assest/workplace-business-modern-male-accessories-laptop-black-background.jpg'
 import { Link } from 'react-router-dom';
@@ -33,7 +33,7 @@ export const Hero = () => {
           <button className='border-2 py-1 px-2 rounded-[20px]'><Link className='no-underline text-white' to='register'>Get started</Link></button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="bg-gray-700">
         <img
           className="d-block w-100 md:max-h-[550px]"
           src={first}

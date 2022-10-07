@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { getElec, fav, notFave } from '../../redux/items/eleSlice'
 import { FaRegEye } from 'react-icons/fa'
-import { Nav } from '../../nav/Nav'
+
 
 
 
@@ -33,7 +33,6 @@ export const FurnitureC = () => {
     }
     return (
       <>
-      <Nav/>
     <div className='mt-2'>
         <div className='px-3 flex '>
           <h3 className='font-bold text-center' >Furniture</h3>
