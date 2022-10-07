@@ -53,6 +53,8 @@ export const Nav = () => {
     }
    })
    console.log(finding)
+
+   
   
   return (
     <>
@@ -68,7 +70,7 @@ export const Nav = () => {
                   <button className='text-white border-4 bg-blue py-1 lg:px-4 md:px-2  rounded-xl'>Search</button>
               </div>
               <div className="hidden">
-                <Search/>
+                <Search data={finding}/>
               </div>
         </div>  
         <div className='md:flex hidden ml-[-5rem] relative lg:text-[20px] md:text-[14px]'> 
@@ -108,8 +110,8 @@ export const Nav = () => {
                 <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
                 <BsSearch className='absolute top-2 left-3 ' />
     </div>
-    <div className="hidden">
-    <Search/>
+    <div className={find.length > 2 ? "block" : "md:hidden"}>
+    <Search data={finding}/>
     </div>
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
