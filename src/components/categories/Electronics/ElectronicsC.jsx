@@ -49,7 +49,9 @@ export const ElectronicsC = () => {
                   <AiFillHeart color='white'/>
                  </div>
                 </div> 
+                <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}} className='text-black no-underline'>
                 <img src={item.thumbnail} alt={item.title} className=' w-[130px] md:w-[250px] max-h-[300px] h-[80%] mx-auto ' /> 
+                </Link>
               </div>
               <div className='p-2 h-[30%] flex '>
               <div>
