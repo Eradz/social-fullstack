@@ -12,7 +12,6 @@ import 'swiper/css';
 import 'swiper/css/pagination'
 import 'swiper/css/navigation';
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
-import { Nav } from '../nav/Nav';
 
 
 
@@ -60,7 +59,6 @@ export const Product = () => {
   }
   return (
     <div className='h-[100vh] flex flex-col gap-4 '>
-      <Nav/>
     <div className='p-3 bg-bg -mt-4' >
           <div className='flex justify-between '>
               <Link to='/category' className='text-black'>
