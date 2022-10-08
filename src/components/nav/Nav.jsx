@@ -99,7 +99,7 @@ export const Nav = () => {
                 {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
-            <div className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[18%] w-[40%]" : "hidden"}>
+            <div className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
                 <Search data={finding}/>
               </div>
     </div>
