@@ -53,13 +53,11 @@ export const Nav = () => {
     }
    })
    console.log(finding)
-
-   
   
   return (
     <>
     <div className='z-30 bg-white sticky w-full top-0 left-0'>
-    <div className=' flex md:justify-around justify-between items-center text-lg font-bold px- gap-[-2rem] p-1'>
+    <div className=' flex md:justify-around justify-between items-center text-lg font-bold px- gap-[-2rem] p-1 relative'>
         <h2 className='text-3xl'><Link to='/' className='no-underline text-black'>  Eradz </Link></h2>
         <div className=' w-6/12 '>
               <div className='items-center justify-center gap-[-2rem] hidden md:flex'>
@@ -69,10 +67,7 @@ export const Nav = () => {
                 </div>
                   <button className='text-white border-4 bg-blue py-1 lg:px-4 md:px-2  rounded-xl'>Search</button>
               </div>
-              <div className="hidden">
-                <Search data={finding}/>
-              </div>
-        </div>  
+        </div>
         <div className='md:flex hidden ml-[-5rem] relative lg:text-[20px] md:text-[14px]'> 
             <ul className='flex justify-between items-center md:gap-2 lg:gap-4 mt-2 font-medium '>
               <NavLink className='no-underline text-black hover:text-blue'  to='/'><li className='hover:text-blue'>Home </li></NavLink>
@@ -92,25 +87,28 @@ export const Nav = () => {
             <Link className='text-black no-underline hover:bg-blue py-2' to='/furniture'>Furniture</Link>
             </div>
         </div>
-             <div className='flex gap-3 items-center justify-center'>
+            <div className='flex gap-3 items-center justify-center'>
               <Link to={{pathname: "/register"}} className='text-black'>
                 <FaRegUser  className='hover:text-blue  hover:cursor-pointer'/>
                 </Link>
                 <div className='flex justify-center items-center hover:text-blue  hover:cursor-pointer'>
                     <Link to='/cart' className="text-black cursor-pointer"> <HiOutlineShoppingCart  size={25} className='hover:text-blue'/></Link>
-                     <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cartItem.length}</p>
+                    <p className=' text-center rounded-full text-sm p-1 bg-gray-200'>{cartItem.length}</p>
                 </div>
                 <div onClick={toogle} className='p-2 md:hidden'>
                 {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
+            <div className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[18%] w-[40%]" : "hidden"}>
+                <Search data={finding}/>
+              </div>
     </div>
     <div>
     <div className='relative max-w-[900px] md:hidden w-[98%] mx-auto '>
-                <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
-                <BsSearch className='absolute top-2 left-3 ' />
+        <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
+        <BsSearch className='absolute top-2 left-3 ' />
     </div>
-    <div className={find.length > 2 ? "block" : "md:hidden"}>
+    <div className={find.length > 1 ? "block md:hidden" : "hidden"}>
     <Search data={finding}/>
     </div>
     </div>
