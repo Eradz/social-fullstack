@@ -78,12 +78,11 @@ export const Nav = () => {
               <NavLink className='no-underline text-black hover:text-blue'  to='/'><li className='hover:text-blue'>About us </li></NavLink>
             </ul>
             <div className={show? 'flex flex-col text-center gap-y-3 absolute w-[100%] bg-white top-11 duration-1000 scale-100' : 'absolute w-full text-center top-[-1000px] duration-1000 scale-0'}>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/category'>All products</Link>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/men'>Men</Link>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/women'>Women</Link>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/watch'>Watch</Link>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/jewelry'>Jewelry</Link>
-            <Link className='text-black no-underline hover:bg-blue py-2' to='/furniture'>Furniture</Link>
+           {menu.map((item) => {
+            return (
+              <Link onClick={toogles} key={item.id} className='text-black no-underline hover:bg-blue py-2' to={item.link}>{item.name}</Link>
+            )
+           })} 
             </div>
         </div>
             <div className='flex gap-3 items-center justify-center'>
