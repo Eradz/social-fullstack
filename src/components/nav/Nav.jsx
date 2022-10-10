@@ -42,17 +42,16 @@ export const Nav = () => {
     </div>
   })
 
-  const [find, setFind] = useState('') 
+  let [find, setFind] = useState('') 
   const searching = (e)=>{
     setFind(e.target.value)
   }
-   console.log(find)
    const finding = elec.filter((item) =>{
     if(item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)){
       return item
     }
    })
-   console.log(finding)
+
   
   return (
     <>
@@ -99,8 +98,8 @@ export const Nav = () => {
                 {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
-            <div className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
-                <Search data={finding}/>
+            <div  className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
+                <Search  data={finding} value={setFind}/>
               </div>
     </div>
     <div>
@@ -109,7 +108,7 @@ export const Nav = () => {
         <BsSearch className='absolute top-2 left-3 ' />
     </div>
     <div className={find.length > 1 ? "block md:hidden" : "hidden"}>
-    <Search data={finding}/>
+    <Search data={finding} value={setFind}/>
     </div>
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>

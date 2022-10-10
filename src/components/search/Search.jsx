@@ -1,12 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-export const Search = ({data}) => {
+export const Search = ({data, value}) => {
+    
+    const yeah = () =>{
+      value('')
+    }
+    
     return (
-    <div className='bg-white'>
+    <div className='bg-white h-[300px] overflow-y-auto'>
     {data.map((item) =>{
     return (
-        <Link className='hover:bg-blue text-black no-underline' to={{pathname: `/product/${item.id}`,}} state={{from: item}}>
-        <div className='hover:bg-blue'>
+        <Link onClick={() =>{yeah()}} className='hover:bg-blue text-black no-underline' to={{pathname: `/product/${item.id}`,}} state={{from: item}}>
+        <div  className='hover:bg-blue'>
         <div className='flex px-3 py-2 items-center gap-2'>
         <img src={item.thumbnail} alt='woman'  className='w-[70px] h-[70px]'/>
         <div>
