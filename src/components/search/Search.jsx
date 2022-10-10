@@ -7,10 +7,11 @@ export const Search = ({data, value}) => {
     }
     
     return (
-    <div className='bg-white mx-auto w-[200px] md:w-[100%] h-[300px] overflow-y-auto'>
+    <div className='bg-white h-[300px] overflow-y-auto'>
     {data.map((item) =>{
     return (
         <Link 
+        key={item.id}
         onClick={() =>{yeah()}} className='hover:bg-blue text-black no-underline' 
         to={{pathname: `/product/${item.id}`,}} state={{from: item}}>
         <div  className='hover:bg-blue'>
