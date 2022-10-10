@@ -7,7 +7,7 @@ export const Search = ({data, value}) => {
     }
     
     return (
-    <div className='bg-white mx-auto w-[300px] md:w-[100%] h-[300px] overflow-y-auto'>
+    <div className='bg-white mx-auto w-[200px] md:w-[100%] h-[300px] overflow-y-auto'>
     {data.map((item) =>{
     return (
         <Link 
