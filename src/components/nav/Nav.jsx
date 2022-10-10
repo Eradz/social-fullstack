@@ -46,10 +46,11 @@ export const Nav = () => {
   const searching = (e)=>{
     setFind(e.target.value)
   }
-   const finding = elec.filter((item) =>{
+  const finding = elec.filter((item) =>{
     if(item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)){
       return item
     }
+    return item
    })
 
   
@@ -106,7 +107,7 @@ export const Nav = () => {
         <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
         <BsSearch className='absolute top-2 left-3 ' />
     </div>
-    <div className={find.length > 1 ? "block md:hidden" : "hidden"}>
+    <div className={find.length > 1 ? "" : "hidden"}>
     <Search data={finding} value={setFind}/>
     </div>
     </div>
