@@ -47,12 +47,13 @@ export const Nav = () => {
     setFind(e.target.value)
   }
  
-  const finding = elec.filter((item) =>{
-    if(item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)){
-      return item
-    }
-    return item
-   })
+  const finding = (find) =>{ 
+   return(
+    elec.filter((item) =>{
+      return (item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find))
+     })
+   ) 
+  } 
 
   
   return (
@@ -100,7 +101,7 @@ export const Nav = () => {
                 </div>
             </div>
             <div  className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
-                <Search  data={finding} value={setFind}/>
+                <Search  data={finding(find)} value={setFind}/>
               </div>
     </div>
     <div>
@@ -109,7 +110,7 @@ export const Nav = () => {
         <BsSearch className='absolute top-2 left-3 ' />
     </div>
     <div className={find.length > 1 ? "" : "hidden"}>
-    <Search data={finding} value={setFind}/>
+    <Search data={finding(find)} value={setFind}/>
     </div>
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
