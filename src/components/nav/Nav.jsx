@@ -46,8 +46,13 @@ export const Nav = () => {
   const searching = (e)=>{
     setFind(e.target.value)
   }
-  const finding =  elec.filter((item) =>{
-    return item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find);
+ 
+  const finding = elec.filter((item) =>{
+    let filtered
+    if(item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)){
+      return filtered = item
+    }
+    return filtered
    })
 
   
