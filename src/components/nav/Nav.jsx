@@ -50,7 +50,7 @@ export const Nav = () => {
     item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)
    )
 
-  
+  console.log(finding)
   return (
     <>
     <div className='z-30 bg-white sticky w-full top-0 left-0'>
