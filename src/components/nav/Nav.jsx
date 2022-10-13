@@ -12,6 +12,9 @@ import { Search } from '../search/Search'
 export const Nav = () => {
   const {cartItem} = useSelector((state) => state.item)
   const {elec} = useSelector((state) => state.elec)
+  localStorage.setItem('search', JSON.stringify(elec))
+  const newele = JSON.parse(localStorage.getItem('search'))
+  console.log(newele)
   const menu =[
     {id: 1, name: 'All products', link: '/category'},
     {id: 7, name: 'Male wears', link: '/men'},
@@ -48,13 +51,12 @@ export const Nav = () => {
 
   const searching = (e) => {
     setFind(e.target.value)
-    const filteredArray = elec.filter((item) =>{
+    const filteredArray = newele.filter((item) =>{
       return item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)
     });
     setFinding(filteredArray)
     console.log(filteredArray)
   }
- 
 
   
   return (
@@ -101,7 +103,7 @@ export const Nav = () => {
                 {nav? <FaTimes className='animate-bounce text-red-500' size={25}/> :  <FaBars size={25}/>}
                 </div>
             </div>
-            <div  className={find.length > 1 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
+            <div  className={find.length > 0 ? "hidden md:block absolute top-[60px] left-[16%] w-[40%]" : "hidden"}>
                 <Search  data={finding} value={setFind} find={find}/>
               </div>
     </div>
@@ -110,7 +112,7 @@ export const Nav = () => {
         <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
         <BsSearch className='absolute top-2 left-3 ' />
     </div>
-    <div className={find.length > 1 ? "" : "hidden"}>
+    <div className={find.length > 0 ? "md:hidden" : "hidden"}>
     <Search data={finding} value={setFind} find={find}/>
     </div>
     </div>

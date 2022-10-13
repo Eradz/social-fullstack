@@ -7,7 +7,7 @@ export const Search = ({data, value}) => {
     }
     
     return (
-    <div className='bg-white h-[300px] overflow-y-auto'>
+    <div className='bg-white  h-[300px] overflow-y-auto'>
     {data.map((item) =>{
     return (
         <Link 
