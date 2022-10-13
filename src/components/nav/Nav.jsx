@@ -43,11 +43,19 @@ export const Nav = () => {
   })
 
   let [find, setFind] = useState('') 
-  const searching = (e)=>{
+ 
+  const [finding, setFinding] = useState([])
+
+  const searching = (e) => {
     setFind(e.target.value)
+    const filteredArray = elec.filter((item) =>{
+      return item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)
+    });
+    setFinding(filteredArray)
+    console.log(filteredArray)
   }
  
-  const finding = [...elec]
+
   
   return (
     <>
