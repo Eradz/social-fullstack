@@ -12,6 +12,9 @@ import { Search } from '../search/Search'
 export const Nav = () => {
   const {cartItem} = useSelector((state) => state.item)
   const {elec} = useSelector((state) => state.elec)
+  localStorage.setItem('search', JSON.stringify(elec))
+  const newele = JSON.parse(localStorage.getItem('search'))
+  console.log(newele)
   const menu =[
     {id: 1, name: 'All products', link: '/category'},
     {id: 7, name: 'Male wears', link: '/men'},
@@ -48,7 +51,7 @@ export const Nav = () => {
 
   const searching = (e) => {
     setFind(e.target.value)
-    const filteredArray = elec.filter((item) =>{
+    const filteredArray = newele.filter((item) =>{
       return item.title.toLowerCase().includes(find) || item.description.toLowerCase().includes(find)
     });
     setFinding(filteredArray)
