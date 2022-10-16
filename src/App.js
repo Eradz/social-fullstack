@@ -14,7 +14,7 @@ import { FurnitureC } from './components/categories/Furniture/FurnitureC';
 import { WatchesC } from './components/categories/Watches/WatchesC';
 import { JewelryC } from './components/categories/Jewelry/JewelryC';
 import { Nav } from './components/nav/Nav';
-import { Search } from './components/search/Search';
+import { SearchC } from './components/search/Search';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
       <Route  path='/Furniture' element={<FurnitureC/>} />
       <Route  path='/watches' element={<WatchesC/>} />
       <Route  path='/jewelry' element={<JewelryC/>} />
-      <Route  path='/search' element={<Search/>} />
+      <Route  path='/search' element={<SearchC/>} />
       </Routes>
     </Router>
     <ToastContainer />

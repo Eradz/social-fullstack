@@ -57,7 +57,6 @@ export const Nav = () => {
     setFinding(filteredArray)
     console.log(filteredArray)
   }
-
   
   return (
     <>
@@ -109,11 +108,10 @@ export const Nav = () => {
     </div>
     <div>
     <div className='relative max-w-[900px] md:hidden w-[98%] mx-auto '>
-        <input onChange={searching} className='px-9 py-2 relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
-        <BsSearch className='absolute top-2 left-3 ' />
+        <input onChange={searching} className='px-9 py-[9px] relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
+        <Link onClick={() =>{setFind('')}} to='/search' state={{from: finding}}>  <BsSearch  className='absolute top-2 right-2' size={23} /></Link>
     </div>
     <div className={find.length > 0 ? "md:hidden" : "hidden"}>
-    <Search data={finding} value={setFind} find={find}/>
     </div>
     </div>
     <div className={nav? 'fixed top-0 left-0 h-screen bg-white w-[60%] flex flex-col md:hidden duration-[1500] ease-in scale-100' : 'left-[-100px] hidden duration-500 scale-0 ease-in'}>
