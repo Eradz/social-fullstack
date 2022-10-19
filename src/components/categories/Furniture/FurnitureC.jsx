@@ -39,9 +39,9 @@ export const FurnitureC = () => {
         </div>
        <div  className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 p-3 gap-y-5">
         {elec.map((item, i) => {
-          if (i > 25 && i < 35 || i > 94){
           return (
-            <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+            ((i > 25 && i < 35) ||( i > 94)) ?
+           <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                 <div className='flex items-center justify-between bg-white px-2'>
                  <h2>...</h2> 
@@ -71,10 +71,9 @@ export const FurnitureC = () => {
               </div>
               </Link>
             </div>
-        </div>
-             
-          )}
-        })}
+        </div> : '')
+             })
+        }
   
   </div>
      

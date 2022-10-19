@@ -38,10 +38,10 @@ export const ElectronicsC = () => {
           <h3 className='font-bold text-center' >Electronics</h3>
         </div>
        <div  className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 p-3 gap-y-5">
-        {elec.map((item, i) => {
-          if (i < 10 || i > 84){
+       {elec.map((item, i) => {
           return (
-            <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
+            ((i < 10 || i > 84)) ?
+           <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
               <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                 <div className='flex items-center justify-between bg-white px-2'>
                  <h2>...</h2> 
@@ -65,14 +65,15 @@ export const ElectronicsC = () => {
                 })}
                 </div>
               </div>
-              <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}}
-               className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg ">
+              <Link to={{pathname: `/product/${item.id}`,}} state={{from: item}} className='text-black no-underline'>
+              <div className="bg-blue w-max h-max absolute bottom-0 right-0 p-4 rounded-br-lg rounded-tl-lg "> 
               <FaRegEye className='text-white' size={20}/>
-             </Link>
+              </div>
+              </Link>
             </div>
-        </div>
-          )}
-        })}
+        </div> : '')
+             })
+        }
   
   </div>
      
