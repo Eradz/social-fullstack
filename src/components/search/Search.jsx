@@ -80,7 +80,7 @@ export const SearchC = () =>{
               )
             }) : 
             <div className='w-[300px] flex justify-center'>
-              <h2 className='text-center flex'>No items found</h2>
+              <h2 className='text-center flex'>Didn't find any Items,<br/> try a more specific search</h2>
               </div>}
       
       </div>
