@@ -43,8 +43,9 @@ export const SearchC = () =>{
     <>
     <div className='mt-2'>
        <div className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 p-3 gap-y-5">
-        {items.length > 0 ? items.map((item, i) => {
+        {items.map((item, i, arr) => {
             return (
+              arr.length > 0 ? 
                 <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
                   <div className=' w-[150px] md:w-[220px] max-h-[300px] h-[70%] mx-auto '> 
                     <div className='flex items-center justify-between bg-white px-2'>
@@ -75,13 +76,13 @@ export const SearchC = () =>{
                   </div>
                   </Link>
                 </div>
-            </div>
-                 
-              )
-            }) : 
+            </div> : 
             <div className='w-[300px] flex justify-center'>
               <h2 className='text-center flex'>Didn't find any Items,<br/> try a more specific search</h2>
-              </div>}
+              </div>
+                 
+              )
+            })}
       
       </div>
          
