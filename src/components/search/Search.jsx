@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import {AiFillStar, AiFillHeart} from 'react-icons/ai'
 import { FaRegEye } from 'react-icons/fa'
-
+import { searchService } from '../redux/items/SearchSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 export const Search = ({data, value}) => {
     
@@ -38,12 +39,21 @@ export const SearchC = () =>{
   const items = location.state.from
   const star = [<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>,<AiFillStar/>]
  console.log(items.length) 
- 
+ const {loading, search} = useSelector((state) => state.search)
+ const dispatch = useDispatch()
+ useEffect(() =>{
+  dispatch(searchService(items))
+ }, [dispatch, items])
+
+ if(loading){
+  return <h1>loading...</h1>
+ }
+
   return(
     <>
     <div className='mt-2'>
        <div className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 p-3 gap-y-5">
-        {items.map((item, i, arr) => {
+        {search.map((item, i, arr) => {
             return (
               arr.length > 0 ? 
                 <div key={item.title} className='rounded-lg w-[180px] md:w-[250px] h-[320px] max-w-max shadow shadow-black pt-2 pb-4 px-2 relative bg-white '>
