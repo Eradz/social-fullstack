@@ -109,7 +109,7 @@ export const Nav = () => {
     <div>
     <div className='relative max-w-[900px] md:hidden w-[98%] mx-auto '>
         <input onChange={searching} className='px-9 py-[9px] relative w-full  text-xs bg-gray-200 rounded-[10px]' type='search' placeholder='Search products, brands and categories' value={find}/>
-        <Link onClick={() =>{setFind('')}} to='/search' state={{from: finding}}>  <BsSearch  className='absolute top-2 right-2' size={23} /></Link>
+        <Link onClick={() =>{setFind('')}} to='/search' state={{from: find}}>  <BsSearch  className='absolute top-2 right-2' size={23} /></Link>
     </div>
     <div className={find.length > 0 ? "md:hidden" : "hidden"}>
     </div>
